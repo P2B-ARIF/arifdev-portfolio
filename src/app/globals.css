@@ -7,8 +7,12 @@ body {
 }
 
 @theme colors {
-	--color-primary: #000;
-	--color-secondary: #fff;
-	--color-accent: #e43c5a;
-	--color-accent-foreground: #e43c5a;
+	--color-primary: #0b1323;
+	--color-secondary: #03163c;
+	--color-ternary: #604e8c;
+	--color-accent: #fffaf5;
+	--color-highlight: #e43c5a;
+	/* #EA580C */
+	/* --color-accent: #fffdf6; */
+	/* --color-accent-foreground: #e43c5a; */
 }
