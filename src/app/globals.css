@@ -1,18 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./../styles/utilities.css";
+
+@property --border-angle {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: 0deg;
+}
 
 body {
 	font-family: "Outfit", sans-serif;
+	background-color: var(--color-primary);
+	color: var(--color-accent);
+	size: 16px;
 }
 
-@theme colors {
+@theme {
 	--color-primary: #0b1323;
 	--color-secondary: #03163c;
+	--color-dark: #18181b;
 	--color-ternary: #604e8c;
 	--color-accent: #fffaf5;
 	--color-highlight: #e43c5a;
 	/* #EA580C */
 	/* --color-accent: #fffdf6; */
 	/* --color-accent-foreground: #e43c5a; */
+
+	--breakpoint-sm: 480px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1024px;
+	--breakpoint-xl: 1280px;
+	--breakpoint-2xl: 1540px;
+
+	--animate-rotate-border: border-rotate 3s linear infinite;
+	@keyframes border-rotate {
+		to {
+			--border-angle: 360deg;
+		}
+		form {
+			--border-angle: 0deg;
+		}
+	}
+}
+
+@theme inline {
+	--animate-scroll: scroll var(--animation-duration, 40s)
+		var(--animation-direction, forwards) linear infinite;
+
+	@keyframes scroll {
+		to {
+			transform: translate(calc(-50% - 0.5rem));
+		}
+	}
 }

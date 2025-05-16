@@ -1,0 +1,90 @@
+"use client";
+
+import React from "react";
+import logo1 from "@/assets/company-logo/logo-acme.png";
+import logo2 from "@/assets/company-logo/logo-apex.png";
+import logo3 from "@/assets/company-logo/logo-celestial.png";
+import logo4 from "@/assets/company-logo/logo-echo.png";
+import logo5 from "@/assets/company-logo/logo-pulse.png";
+import logo6 from "@/assets/company-logo/logo-quantum.png";
+import { motion } from "framer-motion";
+
+const LogoTicker = () => {
+	return (
+		<section className='py-24'>
+			<div className='container mx-auto'>
+				<div className='flex items-center gap-5'>
+					<div className='flex-1 md:flex-none'>
+						<h3>Trusted by top innovative terms</h3>
+					</div>
+					<div className='flex-1 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]'>
+						<motion.div
+							animate={{
+								x: ["-100%", "0%"],
+							}}
+							transition={{
+								repeat: Infinity,
+								repeatType: "loop",
+								duration: 20,
+								ease: "linear",
+							}}
+							className='flex flex-none gap-14'
+						>
+							{[
+								logo1,
+								logo2,
+								logo3,
+								logo4,
+								logo5,
+								logo6,
+								logo3,
+								logo4,
+								logo5,
+							].map((logo, index) => (
+								<img
+									key={index}
+									src={logo.src}
+									alt={`Logo ${index}`}
+									className='h-6 w-auto'
+								/>
+							))}
+						</motion.div>
+						<motion.div
+							animate={{
+								x: ["-100%", "0%"],
+							}}
+							transition={{
+								repeat: Infinity,
+								repeatType: "loop",
+								duration: 20,
+								ease: "linear",
+							}}
+							className='flex flex-none gap-14 ml-14'
+						>
+							{[
+								logo1,
+								logo2,
+								logo3,
+								logo4,
+								logo5,
+								logo6,
+								logo3,
+								logo4,
+								logo5,
+							].map((logo, index) => (
+								<img
+									key={index}
+									src={logo.src}
+									alt={`Logo ${index}`}
+									className='h-6 w-auto'
+								/>
+							))}
+						</motion.div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+export default LogoTicker;

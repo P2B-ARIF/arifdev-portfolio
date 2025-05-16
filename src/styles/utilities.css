@@ -1,0 +1,5 @@
+@layer utilities {
+	.box_gradient {
+		@apply border border-gray-800 bg-gradient-to-br from-gray-900 to-gray-800;
+	}
+}

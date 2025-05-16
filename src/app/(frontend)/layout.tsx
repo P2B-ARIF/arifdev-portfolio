@@ -1,3 +1,5 @@
+import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/navbar/Navbar";
 import React from "react";
 
 interface Props {
@@ -7,9 +9,9 @@ interface Props {
 const Layout = ({ children }: Props) => {
 	return (
 		<main>
-			<nav className='text-regal-blue'>Hello</nav>
+			<Navbar />
 			{children}
-			<footer>Footer</footer>
+			<Footer />
 		</main>
 	);
 };
