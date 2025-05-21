@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@100..900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Jaro:opsz@6..72&family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./../styles/utilities.css";
@@ -26,6 +28,8 @@ body {
 	/* #EA580C */
 	/* --color-accent: #fffdf6; */
 	/* --color-accent-foreground: #e43c5a; */
+
+	--font-jaro: "Jaro", sans-serif;
 
 	--breakpoint-sm: 480px;
 	--breakpoint-md: 768px;

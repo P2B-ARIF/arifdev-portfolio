@@ -2,12 +2,13 @@ import CallToAction from "@/components/home/CallToAction";
 import FAQSection from "@/components/home/FAQSection";
 import Hero from "@/components/home/hero/Hero";
 import LogoTicker from "@/components/common/LogoTicker";
-import SuccessStories from "@/components/home/success-stories/SuccessStories";
 import WorksSection from "@/components/home/works/WorksSection";
-import Blogs from "@/components/blogs/Blogs";
 import AboutSection from "@/components/home/about-section/AboutSection";
 import Testimonials from "@/components/home/testimonials/Testimonials";
 import MySkills from "@/components/home/my-skills/MySkills";
+import WorkCategories from "@/components/home/work-categories/WorkCategories";
+import BlogSection from "@/components/blogs/BlogSection";
+import MovingTitle from "@/components/home/moving-title/MovingTitle";
 
 const Home = () => {
 	return (
@@ -15,13 +16,14 @@ const Home = () => {
 			<Hero />
 			<LogoTicker />
 			<AboutSection />
-			<SuccessStories />
 			<MySkills />
+			<WorkCategories />
+			<MovingTitle />
 			<WorksSection />
-			<Blogs />
+			<BlogSection />
 			<CallToAction />
 			<Testimonials />
-			<FAQSection />
+			{/* <FAQSection /> */}
 		</main>
 	);
 };
