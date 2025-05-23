@@ -12,8 +12,16 @@ import {
 	useTransform,
 } from "framer-motion";
 
+interface MousePosition {
+	x: number;
+	y: number;
+}
+
 const Hero = () => {
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+	const [mousePosition, setMousePosition] = useState<MousePosition>({
+		x: 0,
+		y: 0,
+	});
 	// const [scrollPosition, setScrollPosition] = useState(0);
 	const [cursorVariant, setCursorVariant] = useState("default");
 
@@ -28,31 +36,18 @@ const Hero = () => {
 		};
 	}, []);
 
-	// const handleScroll = () => {
-	// 	const scrollY = window.scrollY;
-	// 	setScrollPosition(scrollY);
-	// 	console.log(scrollY, "scrollY");
-	// };
-
-	// useEffect(() => {
-	// 	window.addEventListener("scroll", handleScroll);
-	// 	return () => {
-	// 		window.removeEventListener("scroll", handleScroll);
-	// 	};
-	// }, []);
-
 	const variants = {
 		default: {
-			x: mousePosition.x - 16,
-			y: mousePosition.y - 16,
-			boxShadow: "0 0 20px #6fe6cc, 0 0 40px #6fe6cc",
-			filter: "drop-shadow(0 0 8px rgba(96, 165, 250, 0.8))",
+			x: mousePosition.x - 4,
+			y: mousePosition.y - 4,
+			// boxShadow: "0 0 20px #6fe6cc, 0 0 40px #6fe6cc",
+			// filter: "drop-shadow(0 0 8px rgba(96, 165, 250, 0.8))",
 		},
 		hovered: {
 			height: 150,
 			width: 150,
-			x: mousePosition.x - 16,
-			y: mousePosition.y - 16,
+			x: mousePosition.x - 75,
+			y: mousePosition.y - 75,
 
 			boxShadow: "0 0 20px transparent, 0 0 40px transparent",
 			filter: "drop-shadow(0 0 8px transparent",
@@ -101,14 +96,8 @@ const Hero = () => {
 				// cursor: "none",
 				backgroundPositionY: backgroundPositionY,
 			}}
-			animate={{
-				backgroundPositionX: starsBg?.width,
-			}}
-			transition={{
-				repeat: Infinity,
-				duration: 100,
-				ease: "linear",
-			}}
+			animate={{ backgroundPositionX: starsBg?.width }}
+			transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
 			className='min-h-screen relative overflow-hidden'
 		>
 			<div
@@ -123,14 +112,11 @@ const Hero = () => {
 					<motion.div
 						variants={variants}
 						animate={cursorVariant}
-						className='pointer-events-none fixed top-0 left-0 h-8 w-8 rounded-full bg-white'
+						className='pointer-events-none fixed top-0 left-0 h-2 w-2 rounded-full bg-white cursor-none'
 					/>
 					<motion.h1
-						style={{
-							y: textPositionY,
-						}}
-						className='text-7xl md:text-9xl font-extrabold uppercase flex flex-col items-center justify-center max-w-[1100px] w-full 
-						'
+						style={{ y: textPositionY }}
+						className='text-7xl md:text-9xl font-extrabold uppercase flex flex-col items-center justify-center max-w-[1100px] w-full'
 					>
 						<motion.span
 							onMouseEnter={textEnter}
@@ -147,6 +133,8 @@ const Hero = () => {
 						<motion.span
 							onMouseEnter={textEnter}
 							onMouseLeave={textLeave}
+							initial={{ x: -200 }}
+							animate={{ x: 0 }}
 							className='text-end ml-32 text-6xl'
 						>
 							{/* <span className='text-end ml-0 md:ml-48'> */}
@@ -161,9 +149,15 @@ const Hero = () => {
 					style={{
 						y: textPositionY2,
 					}}
+					initial={{ y: 100 }}
+					animate={{ y: 0 }}
+					transition={{ duration: 0.3 }}
 				>
 					<div className='text-lg md:text-xl'>
-						<h4>Transforming ideas into pixel-perfect experiences</h4>
+						<h3>
+							Hi, I'm <span className='text-blue-400'>Mohammad Arif</span> 👋
+						</h3>
+						<h4>A passionate Full Stack Developer & Problem Solver </h4>
 						<h4>through clean code and intuitive design</h4>
 					</div>
 					<div className='flex items-center gap-4 mt-3'>

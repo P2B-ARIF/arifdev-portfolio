@@ -1,12 +1,13 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import profile from "@/assets/images/profile.jpg";
 import starsBg from "@/assets/elements/stars.png";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import { FileDown, FileUser } from "lucide-react";
 
 const string =
-	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fugiat iste nemo accusamus at illo quasi? odi libero reiciendis cupiditate!";
+	"I'm Mohammad Arif, a web developer focused on creating clean, user-friendly, and functional websites. With over [3 Years] of experience in frontend development, I specialize in JavaScript frameworks like React and have a keen eye for design and user experience.";
 
 const AboutSection = () => {
 	const container = useRef(null);
@@ -36,9 +37,16 @@ const AboutSection = () => {
 					<div className='grid grid-cols-2'>
 						<div></div>
 						<div className=''>
+							<h1 className='text-5xl font-bold mb-8 text-blue-400 whitespace-nowrap'>
+								Who Am I?
+							</h1>
+							<h5 className='text-lg font-medium mb-6'>
+								A Developer Who Finds Passion in Code
+							</h5>
+
 							<div
 								ref={container}
-								className='text-5xl font-bold flex flex-wrap'
+								className='text-2xl font-medium flex flex-wrap leading-7'
 							>
 								{string?.split(" ").map((word, idx) => {
 									const start = idx / string.length;
@@ -54,27 +62,22 @@ const AboutSection = () => {
 									);
 								})}
 							</div>
-							<br />
-							<br />
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-								iste quos, quibusdam et unde rerum labore. Illo modi laborum
-								libero error amet quidem corrupti aut magnam non dolore eveniet
-								fugit recusandae, nostrum, possimus necessitatibus aliquam
-								voluptatibus? Id, obcaecati molestias. Molestias reprehenderit
-								maiores ab porro, doloribus delectus vel nostrum ducimus
-								aspernatur.
-							</p>
 
-							<div>
-								<div>download resume</div>
-								<div className=' relative rounded-lg bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100%'>
+							<h4 className='my-5 mt-10'>
+								Next Js | Prisma | Typescipt | MongoDB | MySql | Framer-Motion
+							</h4>
+							<div className='mt-6 flex items-center gap-5'>
+								<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+									<FileDown />
+									Download Resume
+								</div>
+								<div className='relative rounded-lg bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100%'>
 									<div className='absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-blue-400 via-blue-400 to-blue-700 rounded-lg blur-md filter group-hover:opacity-100 group-hover:duration-200 animate-rotate-border'></div>
 									<Link
 										href='/contact'
 										className='relative flex items-center gap-2 px-4 py-2 bg-dark text-accent rounded-lg'
 									>
-										Get In Touch
+										Hire Me
 										<svg
 											aria-hidden='true'
 											viewBox='0 0 10 10'
@@ -94,7 +97,6 @@ const AboutSection = () => {
 										</svg>
 									</Link>
 								</div>
-								F
 							</div>
 						</div>
 					</div>
@@ -120,7 +122,13 @@ const Word = ({
 	const step = amount / children.length;
 
 	return (
-		<span className='mr-3 mt-3 relative'>
+		<span
+			className={`mr-3 mt-3 relative ${
+				(children === "[3" && "text-blue-500") ||
+				(children == "Years]" && "text-blue-500")
+			}
+			}`}
+		>
 			{characters.map((char, idx) => {
 				const start = range[0] + idx * step;
 				const end = range[0] + (idx + 1) * step;

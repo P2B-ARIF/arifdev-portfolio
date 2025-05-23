@@ -23,7 +23,7 @@ const Home = () => {
 			<BlogSection />
 			<CallToAction />
 			<Testimonials />
-			{/* <FAQSection /> */}
+			<FAQSection />
 		</main>
 	);
 };

@@ -18,13 +18,25 @@ body {
 	size: 16px;
 }
 
+@layer utilities {
+	.border_style {
+		@apply rounded-lg overflow-hidden relative border border-gray-600 p-2 bg-slate-500/20 backdrop-blur-lg;
+	}
+}
+/* @utility {
+	.border_style {
+		@apply "rounded-lg overflow-hidden relative border border-gray-600 p-2 bg-slate-500/20 backdrop-blur-lg";
+	}
+} */
+
 @theme {
 	--color-primary: #0b1323;
 	--color-secondary: #03163c;
 	--color-dark: #18181b;
 	--color-ternary: #604e8c;
 	--color-accent: #fffaf5;
-	--color-highlight: #e43c5a;
+	--color-highlight: #34d399;
+	/* --color-highlight: #e43c5a; */
 	/* #EA580C */
 	/* --color-accent: #fffdf6; */
 	/* --color-accent-foreground: #e43c5a; */

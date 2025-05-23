@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import thumb from "@/assets/images/image3.jpg";
 
 export default function BlogSection() {
 	return (
-		<div className='py-16 px-4 md:px-8 lg:px-16'>
+		<div className='py-16 px-4 md:px-8 lg:px-16 mt-10'>
 			<div className='max-w-6xl mx-auto'>
 				{/* Blog Label */}
 				<div className='inline-flex items-center px-3 py-1 rounded-full bg-emerald-900 text-emerald-400 mb-6'>
@@ -56,7 +57,7 @@ export default function BlogSection() {
 						<div className='md:w-1/3 lg:w-1/4'>
 							<div className='relative aspect-[4/3] overflow-hidden rounded-lg'>
 								<Image
-									src='/placeholder.svg?height=240&width=320'
+									src={thumb}
 									alt='Exit sign with arrow'
 									fill
 									className='object-cover'
@@ -107,7 +108,7 @@ export default function BlogSection() {
 						<div className='md:w-1/3 lg:w-1/4'>
 							<div className='relative aspect-[4/3] overflow-hidden rounded-lg'>
 								<Image
-									src='/placeholder.svg?height=240&width=320'
+									src={thumb}
 									alt='Starfish in clear water'
 									fill
 									className='object-cover'
@@ -157,7 +158,7 @@ export default function BlogSection() {
 						<div className='md:w-1/3 lg:w-1/4'>
 							<div className='relative aspect-[4/3] overflow-hidden rounded-lg'>
 								<Image
-									src='/placeholder.svg?height=240&width=320'
+									src={thumb}
 									alt='Person taking photos by a lake'
 									fill
 									className='object-cover'

@@ -1,22 +1,40 @@
+"use client";
+
 import { FileDown } from "lucide-react";
 import Link from "next/link";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 const navLists = [
 	{ id: 1, href: "/", label: "Home" },
-	{ id: 2, href: "/about", label: "About" },
+	{ id: 2, href: "/about-me", label: "About" },
 	{ id: 3, href: "/gallery", label: "Gallery" },
-	{ id: 4, href: "/works", label: "Works" },
-	{ id: 5, href: "/blog", label: "Blog" },
+	{ id: 5, href: "/blogs", label: "Blogs" },
+	// { id: 4, href: "/works", label: "Works" },
 	// { id: 5, href: "/contact", label: "Contact" },
 ];
 
 const Navbar = () => {
+	const [isScroll, setIsScroll] = useState(false);
+	const [hide, setHide] = useState(false);
+	const [scrollPosition, setScrollPosition] = useState(0);
+
+	const { scrollY } = useScroll();
+	useMotionValueEvent(scrollY, "change", latest => {
+		const previous: any = scrollY.getPrevious();
+		setIsScroll(latest > 150);
+		setHide(latest > previous);
+		setScrollPosition(latest);
+	});
+
 	return (
-		<div className='absolute top-0 left-0 w-full z-50'>
+		<div
+			className={`${
+				hide ? "translate-y-[-100px]" : isScroll ? "-translate-y-[100px]" : ""
+			} fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-linear`}
+		>
 			<div className='flex items-center justify-between container mx-auto py-10'>
-				<Link href='/' className='font-extrabold text-2xl'>
+				<Link href='/' className='font-semibold uppercase text-2xl'>
 					Arif
 				</Link>
 				<div className='flex items-center gap-5 perspective-normal'>
