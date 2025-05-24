@@ -34,6 +34,7 @@ import img3 from "@/assets/images/image3.jpg";
 import img4 from "@/assets/images/image4.jpg";
 import img5 from "@/assets/images/image5.jpg";
 import img6 from "@/assets/images/image6.jpg";
+import FAQSection from "@/components/home/FAQSection";
 
 const Contact = () => {
 	const images = [
@@ -283,6 +284,8 @@ const Contact = () => {
 
 					<InfiniteMovingImages items={images} direction='left' speed='slow' />
 				</div>
+
+				<FAQSection />
 			</div>
 		</section>
 	);

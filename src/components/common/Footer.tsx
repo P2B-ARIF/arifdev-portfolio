@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className='relative'>
+		<footer className='relative pt-16'>
 			<div
 				className='absolute inset-0 bg-secondary bg-blend-overlay [mask-image:radial-gradient(60%_60%_at_50%_70%,black,transparent)]'
 				style={{

@@ -2,6 +2,7 @@
 
 import bgImage from "@/assets/images/young-woman-working-glass-greenhouse.ca519f3d.jpg";
 import { useResponsiveColumns } from "@/hook/use-responsive-columns";
+import { Sparkles } from "lucide-react";
 
 const defaultImages: ImageProps[] = [
 	{
@@ -93,17 +94,25 @@ const GalleryPage: React.FC<GalleryProps> = ({
 			: gap;
 
 	return (
-		<div className='container mx-auto px-4 py-20'>
+		<div className='container mx-auto px-4 py-20 pt-32'>
 			<div className='flex flex-col gap-5 max-w-xl mx-auto text-center mb-16'>
-				<h3 className='text-primary tracking-widest uppercase'>Our Work</h3>
-				<h1 className='text-xl md:text-2xl lg:text-3xl xl:text-[40px] font-secondary font-semibold text-secondary leading-tight max-sm:w-[80%]'>
-					Discover the Beauty We’ve Created
+				<div className='w-fit self-center-safe flex items-center px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 text-gray-300'>
+					<Sparkles className='w-4 h-4 mr-2' />
+					<span className='text-sm font-medium tracking-wide'>
+						Our Work Gallery
+					</span>
+				</div>
+
+				<h1 className='text-xl md:text-5xl font-semibold leading-[1.2] sm:leading-9 md:leading-[46px] 2xl:leading-[55px] font-secondary text-transparent bg-clip-text bg-gradient-to-br from-accent to-primary/50 '>
+					Explore My Crafted Code & Creative Builds
 				</h1>
-				<p className='text-xs md:text-base text-secondary font-secondary leading-tight'>
-					Browse through our gallery of completed landscaping and home
-					improvement projects. Each image tells a story of transformation,
-					creativity, and quality craftsmanship. Let these visuals inspire your
-					next project.
+
+				<p className='text-xs md:text-base text-gray-400 font-secondary leading-tight'>
+					Dive into a curated collection of real-world web applications and
+					digital solutions I’ve built from the ground up. From sleek UIs to
+					robust backends, each project reflects my passion for clean code,
+					performance, and user experience. Get inspired by what’s possible with
+					full-stack development.
 				</p>
 			</div>
 

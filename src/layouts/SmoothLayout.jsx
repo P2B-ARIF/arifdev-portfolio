@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function SmoothLayout({ children }) {
 	useEffect(() => {
 		const lenis = new Lenis({
-			lerp: 0.03,
+			lerp: 0.05,
 			smooth: true,
 			direction: "vertical",
 		});

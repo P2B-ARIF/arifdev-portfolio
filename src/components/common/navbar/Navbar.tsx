@@ -7,8 +7,8 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 const navLists = [
 	{ id: 1, href: "/", label: "Home" },
-	{ id: 2, href: "/about-me", label: "About" },
-	{ id: 3, href: "/gallery", label: "Gallery" },
+	{ id: 2, href: "/about-me", label: "About Me" },
+	{ id: 3, href: "/projects-gallery", label: "Projects Gallery" },
 	{ id: 5, href: "/blogs", label: "Blogs" },
 	// { id: 4, href: "/works", label: "Works" },
 	// { id: 5, href: "/contact", label: "Contact" },
