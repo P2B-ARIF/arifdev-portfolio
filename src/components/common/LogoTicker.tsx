@@ -11,10 +11,10 @@ import { motion } from "framer-motion";
 
 const LogoTicker = () => {
 	return (
-		<section className='py-24'>
+		<section className='pt-24 bg-transparent'>
 			<div className='container mx-auto'>
-				<div className='flex items-center gap-5'>
-					<div className='flex-1 md:flex-none'>
+				<div className='md:flex items-center gap-5 px-5 md:px-0'>
+					<div className='flex-1 md:flex-none max-md:mb-5'>
 						<h3>Trusted by top innovative terms</h3>
 					</div>
 					<div className='flex-1 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]'>
@@ -45,7 +45,7 @@ const LogoTicker = () => {
 									key={index}
 									src={logo.src}
 									alt={`Logo ${index}`}
-									className='h-6 w-auto'
+									className='h-5 md:h-6 w-auto'
 								/>
 							))}
 						</motion.div>

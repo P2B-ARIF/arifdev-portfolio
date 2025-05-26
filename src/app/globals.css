@@ -49,8 +49,8 @@ body {
 	--breakpoint-sm: 480px;
 	--breakpoint-md: 768px;
 	--breakpoint-lg: 1024px;
-	--breakpoint-xl: 1280px;
-	--breakpoint-2xl: 1540px;
+	--breakpoint-xl: 1180px;
+	--breakpoint-2xl: 1560px;
 
 	--animate-rotate-border: border-rotate 3s linear infinite;
 	@keyframes border-rotate {

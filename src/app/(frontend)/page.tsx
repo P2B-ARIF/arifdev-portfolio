@@ -17,12 +17,12 @@ const Home = () => {
 			<LogoTicker />
 			<AboutSection />
 			<MySkills />
-			<WorkCategories />
-			<MovingTitle />
-			<WorksSection />
-			<BlogSection />
-			<CallToAction />
-			<Testimonials />
+			{/* <WorkCategories /> */}
+			{/* <MovingTitle /> */}
+			{/* <WorksSection /> */}
+			{/* <BlogSection /> */}
+			{/* <CallToAction /> */}
+			{/* <Testimonials /> */}
 		</main>
 	);
 };

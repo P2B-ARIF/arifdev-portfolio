@@ -17,7 +17,7 @@ const page = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "center",
 				}}
-				className='h-screen mix-blend-screen bg-primary grayscale-[0.5] [mask-image:radial-gradient(100%_80%_at_50%_20%,black,transparent)]'
+				className='h-screen mix-blend-screen bg-blue-600 grayscale-[0.5] [mask-image:radial-gradient(100%_80%_at_50%_20%,#03163c,transparent)]'
 			>
 				<div className='items-center h-full grid grid-cols-1 md:grid-cols-2 gap-32 container mx-auto'>
 					<div className='space-y-5 w-3/4'>

@@ -22,10 +22,10 @@ const AboutSection = () => {
 			style={{ backgroundImage: `url(${starsBg.src})` }}
 			animate={{ backgroundPositionX: starsBg?.width }}
 			transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
-			className='relative'
+			className='relative py-32'
 		>
-			<div className='container mx-auto '>
-				<div
+			<div className='container mx-auto max-w-4xl'>
+				{/* <div
 					className='min-h-[130vh] bg-gradient-to-r from-primary to-secondary flex flex-col items-center container justify-center mix-blend-screen'
 					style={{
 						backgroundImage: `url(${profile.src})`,
@@ -33,74 +33,71 @@ const AboutSection = () => {
 						backgroundRepeat: "no-repeat",
 						backgroundPosition: "left",
 					}}
-				>
-					<div className='grid grid-cols-2'>
-						<div></div>
-						<div className=''>
-							<h1 className='text-5xl font-bold mb-8 text-blue-400 whitespace-nowrap'>
-								Who Am I?
-							</h1>
-							<h5 className='text-lg font-medium mb-6'>
-								A Developer Who Finds Passion in Code
-							</h5>
+				> */}
+				<div className='grid grid-cols-1'>
+					{/* <div></div> */}
+					<div ref={container} className='px-5'>
+						{/* <h1 className='text-5xl font-bold mb-8 text-blue-400 whitespace-nowrap'>
+							Who Am I?
+						</h1> */}
+						<h5 className='text-lg font-medium mb-4'>
+							A Developer Who Finds Passion in Code
+						</h5>
 
-							<div
-								ref={container}
-								className='text-2xl font-medium flex flex-wrap leading-7'
-							>
-								{string?.split(" ").map((word, idx) => {
-									const start = idx / string.length;
-									const end = start + 1 / string.length;
+						<div className='text-xl md:text-2xl lg:text-[45px] flex flex-wrap leading-5 md:leading-12'>
+							{string?.split(" ").map((word, idx) => {
+								const start = idx / string.length;
+								const end = start + 1 / string.length;
 
-									return (
-										<Word
-											key={idx}
-											children={word}
-											range={[start, end]}
-											progress={scrollYProgress}
-										/>
-									);
-								})}
+								return (
+									<Word
+										key={idx}
+										children={word}
+										range={[start, end]}
+										progress={scrollYProgress}
+									/>
+								);
+							})}
+						</div>
+
+						<h4 className='my-5 mt-10'>
+							Next Js | Prisma | Typescipt | MongoDB | MySql | Framer-Motion
+						</h4>
+						<div className='mt-6 flex items-center gap-5'>
+							<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+								<FileDown />
+								Download Resume
 							</div>
-
-							<h4 className='my-5 mt-10'>
-								Next Js | Prisma | Typescipt | MongoDB | MySql | Framer-Motion
-							</h4>
-							<div className='mt-6 flex items-center gap-5'>
-								<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
-									<FileDown />
-									Download Resume
-								</div>
-								<div className='relative rounded-lg bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100%'>
-									<div className='absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-blue-400 via-blue-400 to-blue-700 rounded-lg blur-md filter group-hover:opacity-100 group-hover:duration-200 animate-rotate-border'></div>
-									<Link
-										href='/contact'
-										className='relative flex items-center gap-2 px-4 py-2 bg-dark text-accent rounded-lg'
+							{/* <div className='relative rounded-lg bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100%'>
+								<div className='absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-blue-400 via-blue-400 to-blue-700 rounded-lg blur-md filter group-hover:opacity-100 group-hover:duration-200 animate-rotate-border'></div>
+								<Link
+									href='/contact'
+									className='relative flex items-center gap-2 px-4 py-2 bg-dark text-accent rounded-lg'
+								>
+									Hire Me
+									<svg
+										aria-hidden='true'
+										viewBox='0 0 10 10'
+										height='10'
+										width='10'
+										fill='none'
+										className='mt-0.5 hover:ml-2 transition-all duration-300 ease-linear -mr-1 stroke-white stroke-2 '
 									>
-										Hire Me
-										<svg
-											aria-hidden='true'
-											viewBox='0 0 10 10'
-											height='10'
-											width='10'
-											fill='none'
-											className='mt-0.5 hover:ml-2 transition-all duration-300 ease-linear -mr-1 stroke-white stroke-2 '
-										>
-											<path
-												d='M0 5h7'
-												className='transition opacity-0 group-hover:opacity-100'
-											></path>
-											<path
-												d='M1 1l4 4-4 4'
-												className='transition group-hover:translate-x-[3px]'
-											></path>
-										</svg>
-									</Link>
-								</div>
-							</div>
+										<path
+											d='M0 5h7'
+											className='transition opacity-0 group-hover:opacity-100'
+										></path>
+										<path
+											d='M1 1l4 4-4 4'
+											className='transition group-hover:translate-x-[3px]'
+										></path>
+									</svg>
+								</Link>
+							</div> */}
 						</div>
 					</div>
 				</div>
+				{/* </div> */}
 			</div>
 		</motion.div>
 	);
