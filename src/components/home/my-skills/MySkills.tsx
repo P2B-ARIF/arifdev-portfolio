@@ -14,10 +14,10 @@ import {
 
 const MySkills = () => {
 	return (
-		<div className='max-w-7xl container mx-auto w-full text-white'>
-			<div className='grid grid-cols-12 grid-rows-7 gap-4 h-full w-full'>
-				<div className='col-span-7 row-span-7 grid grid-cols-7 grid-rows-7 gap-3'>
-					<div className='col-span-7 row-span-3 grid grid-cols-7 gap-3'>
+		<div className='max-w-7xl container mx-auto w-full text-white px-3'>
+			<div className='md:grid md:grid-cols-12 md:grid-rows-7 gap-4 h-full w-full'>
+				<div className='md:col-span-7 md:row-span-7 grid md:grid-cols-7 md:grid-rows-7 gap-3 max-md:mb-3'>
+					<div className='col-span-7 row-span-3 grid md:grid-cols-7 gap-3'>
 						<div className='col-span-4 rounded-lg overflow-hidden  relative border border-gray-600 p-2 bg-slate-500/20 backdrop-blur-lg h-[300px] 2xl:h-[400px]'>
 							<div className='rounded-md overflow-hidden h-full'>
 								<div className='absolute top-4 left-4 z-10 bg-zinc-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center'>
@@ -36,14 +36,12 @@ const MySkills = () => {
 									referrerPolicy='no-referrer-when-downgrade'
 									className='grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300'
 								></iframe>
-								<div className='absolute bottom-4 left-4 z-10 bg-zinc-900/80 backdrop-blur-sm px-4 py-2 rounded-full'>
-									<span className='text-sm font-medium'>
-										Rangunia, Bangladesh
-									</span>
+								<div className='absolute bottom-4 left-4 z-10 bg-zinc-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full'>
+									<span className='text-sm'>Rangunia, Bangladesh</span>
 								</div>
 							</div>
 						</div>
-						<div className='col-span-3 rounded-lg overflow-hidden relative border border-gray-600 p-2 bg-slate-500/20 backdrop-blur-lg'>
+						<div className='col-span-4 md:col-span-3 rounded-lg overflow-hidden relative border border-gray-600 p-2 bg-slate-500/20 backdrop-blur-lg'>
 							<div className='rounded-md overflow-hidden h-full flex flex-col justify-between'>
 								<div className='flex items-center mb-4'>
 									<Keyboard className='w-5 h-5 mr-2 text-emerald-400' />
@@ -77,17 +75,17 @@ const MySkills = () => {
 							</div>
 						</div>
 					</div>
-					<div className='col-span-7 row-span-1 grid grid-cols-7 gap-3'>
-						<div className='col-span-1 border_style'>facebook</div>
-						<div className='col-span-1 border_style'>linkedin</div>
-						<div className='col-span-3 border_style'>whatsapp</div>
-						<div className='col-span-2 border_style'>thinking</div>
+					<div className='col-span-7 row-span-1 grid grid-cols-2 md:grid-cols-7 gap-3'>
+						<div className='md:col-span-1 border_style'>facebook</div>
+						<div className='md:col-span-1 border_style'>linkedin</div>
+						<div className='md:col-span-3 border_style'>whatsapp</div>
+						<div className='md:col-span-2 border_style'>thinking</div>
 					</div>
-					<div className='col-span-7 row-span-3 border_style'>map</div>
+					<div className='col-span-7 md:row-span-3 border_style'>map</div>
 				</div>
 
-				<div className='col-span-5 row-span-7 grid grid-rows-7 gap-3'>
-					<div className='row-span-6  border_style'>skills</div>
+				<div className='md:col-span-5 row-span-7 grid md:grid-rows-7 gap-3'>
+					<div className='row-span-6 border_style'>skills</div>
 					<div className='row-span-1  grid grid-cols-2 gap-3'>
 						<div className='border_style'>Contact</div>
 						<div className='border_style'>resume</div>

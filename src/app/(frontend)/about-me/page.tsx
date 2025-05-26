@@ -19,7 +19,7 @@ const page = () => {
 				}}
 				className='h-screen mix-blend-screen bg-blue-600 grayscale-[0.5] [mask-image:radial-gradient(100%_80%_at_50%_20%,#03163c,transparent)]'
 			>
-				<div className='items-center h-full grid grid-cols-1 md:grid-cols-2 gap-32 container mx-auto'>
+				<div className='px-5 items-center h-full grid grid-cols-1 md:grid-cols-2 gap-32 container mx-auto'>
 					<div className='space-y-5 w-3/4'>
 						<h4 className='text-6xl font-bold'>About</h4>
 						<h1 className='text-2xl font-bold'>Hi, I'm Mohammad Arif</h1>
@@ -77,9 +77,9 @@ const page = () => {
 				</div> */}
 			</div>
 
-			<div className='container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 py-16'>
+			<div className='container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 py-16 px-5'>
 				<div className='relative col-span-2'>
-					<h1 className='text-9xl -rotate-12 text-transparent bg-gradient-to-r to-accent/20 from-gray-600/30 bg-clip-text font-neonderthaw'>
+					<h1 className='text-7xl md:text-9xl -rotate-12 text-transparent bg-gradient-to-r to-accent/20 from-gray-600/30 bg-clip-text font-neonderthaw'>
 						Experience
 					</h1>
 

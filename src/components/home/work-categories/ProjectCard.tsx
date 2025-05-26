@@ -36,7 +36,7 @@ const ProjectCard = ({ project }) => {
 
 	return (
 		<motion.div
-			className='w-[450px] rounded-2xl 2xl:w-[450px] flex-shrink-0 overflow-hidden p-5 md:p-8 text-accent border border-gray-500'
+			className='w-[400px] md:w-[450px] rounded-2xl 2xl:w-[450px] flex-shrink-0 overflow-hidden p-5 md:p-8 text-accent border border-gray-500'
 			initial={{ opacity: 0.6 }}
 			whileInView={{ opacity: 1 }}
 			whileHover={{ y: -10 }}
@@ -57,7 +57,7 @@ const ProjectCard = ({ project }) => {
 			</div>
 
 			{/* Using <img> instead of <Image /> for color extraction */}
-			<div className='w-full h-[400px] 2xl:h-[50vh] bg-white rounded-2xl overflow-hidden'>
+			<div className='w-full h-[320px]  md:h-[400px] 2xl:h-[50vh] bg-white rounded-2xl overflow-hidden'>
 				<Image
 					ref={imgRef}
 					src={project?.imageUrl || "/placeholder.svg"}

@@ -21,13 +21,13 @@ const MovingTitle = () => {
 		<div ref={container} className='overflow-x-hidden relative h-[250vh]'>
 			<motion.h1
 				style={{ x: x1, y: y1 }}
-				className=' text-[200px] text-center text-gray-200/80 whitespace-nowrap'
+				className='text-[100px] md:text-[200px] text-center text-gray-200/80 whitespace-nowrap'
 			>
 				Crafting Unique Interfaces with Code & Creativity
 			</motion.h1>
 			<motion.h1
 				style={{ x: x2, y: y2 }}
-				className='text-[200px] text-center text-gray-300/80 whitespace-nowrap'
+				className='text-[100px] md:text-[200px] text-center text-gray-300/80 whitespace-nowrap'
 			>
 				Modern Web Experiences by Mohammad Arif
 			</motion.h1>

@@ -52,17 +52,17 @@ const WorkCard = ({ idx, list, range, targetScale, progress }) => {
 			className={`sticky border border-gray-200`}
 		>
 			<div className='bg-zinc-100 text-black h-[90vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden  relative'>
-				<div className='col-span-1 p-10'>
+				<div className='col-span-1 p-5 md:p-10'>
 					<div className='flex items-center justify-between'>
 						<motion.h1
 							// style={{
 							// 	y: titleY,
 							// }}
-							className='text-4xl font-semibold'
+							className='text-3xl md:text-4xl font-semibold'
 						>
 							{idx + 1} Oscar Project <span className='text-2xl'>- 2023</span>
 						</motion.h1>
-						<div className='absolute top-10 left-[35%] w-10 h-10 bg-zinc-900 rounded-full flex items-center justify-center text-white'>
+						<div className='absolute top-5 md:top-10 right-5 md:left-[35%] w-10 h-10 bg-zinc-900 rounded-full flex items-center justify-center text-white'>
 							<ArrowUpRight />
 						</div>
 					</div>
@@ -82,8 +82,8 @@ const WorkCard = ({ idx, list, range, targetScale, progress }) => {
 						})}
 					</div>
 				</div>
-				<div className='col-span-2 p-10 overflow-hidden'>
-					<div className='m-10 overflow-hidden'>
+				<div className='col-span-2 p-5 md:p-10 overflow-hidden'>
+					<div className='md:m-10 overflow-hidden'>
 						<motion.div style={{ scale: cardScale }} className='w-full h-full'>
 							<Image
 								src={workList?.thumbnail}

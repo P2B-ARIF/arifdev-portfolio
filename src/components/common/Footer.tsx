@@ -12,7 +12,7 @@ const Footer = () => {
 				}}
 			/>
 
-			<div className='container mx-auto'>
+			<div className='container mx-auto px-5'>
 				<div className='grid grid-cols-1 md:grid-cols-8 gap-3'>
 					<div className='col-span-6'>
 						<h5 className='font-bold text-lg'>Mohammad Arif</h5>
@@ -21,7 +21,7 @@ const Footer = () => {
 							Open for side-projects & collaborations
 						</p>
 					</div>
-					<div className='col-span-2 grid grid-cols-2 gap-5'>
+					<div className='col-span-2 grid grid-cols-2 gap-5 max-md:mt-10'>
 						<div>
 							<h4 className='mb-5 text-lg font-semibold'>Me</h4>
 							<ul className='space-y-2 text-gray-400'>
@@ -45,7 +45,7 @@ const Footer = () => {
 				</div>
 
 				<div className='font-jaro flex  items-center text-center  font-medium  '>
-					<div className='mx-auto group translate-x-16 hover:translate-x-0 text-[14rem] transition-all duration-300 ease-linear flex'>
+					<div className='mx-auto group md:translate-x-16 hover:translate-x-0 text-[6rem] xl:text-[14rem] transition-all duration-300 ease-linear flex'>
 						<span className=' duration-300 ease-linear group-hover:mr-10'>
 							damn
 						</span>

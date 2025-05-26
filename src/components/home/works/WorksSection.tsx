@@ -145,7 +145,7 @@ const WorksSection = () => {
 		<section ref={containRef} className='container mx-auto relative'>
 			<motion.h1
 				style={{ y }}
-				className='sticky top-0 text-[300px] tracking-widest leading-5 mb-52 font-extrabold text-center text-gray-300/20'
+				className='sticky top-0 text-8xl md:text-9xl lg:text-[300px] tracking-widest leading-5 mb-52 font-extrabold text-center text-gray-300/20'
 			>
 				WORK
 			</motion.h1>
