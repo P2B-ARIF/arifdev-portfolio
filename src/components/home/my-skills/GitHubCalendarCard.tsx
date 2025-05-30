@@ -1,6 +1,24 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { request, gql } from "graphql-request";
+
+// --- 1. Define Types for GraphQL Response ---
+interface ContributionCalendar {
+	totalContributions: number;
+}
+
+interface ContributionsCollection {
+	contributionCalendar: ContributionCalendar;
+}
+
+interface User {
+	contributionsCollection: ContributionsCollection;
+}
+
+interface GitHubData {
+	user: User;
+}
 
 const GitHubCalendarCard = () => {
 	const username = "P2B-ARIF";
@@ -30,8 +48,8 @@ const GitHubCalendarCard = () => {
 		};
 
 		try {
-			const data = await request(endpoint, query, {}, headers);
-			const count =
+			const data = await request<GitHubData>(endpoint, query, {}, headers);
+			const count: any =
 				data?.user?.contributionsCollection?.contributionCalendar
 					?.totalContributions || 0;
 			setContributions(count);

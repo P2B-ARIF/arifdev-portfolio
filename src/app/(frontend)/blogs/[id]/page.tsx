@@ -74,16 +74,16 @@ const post = {
 
 const BlogPostPage = () => {
 	// Helper function to render content with bolding, line breaks, and basic lists
-	const renderContent = contentString => {
+	const renderContent = (contentString: any) => {
 		let htmlContent = contentString;
 
 		// Bold text (**)
 		htmlContent = htmlContent.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-		const paragraphs = htmlContent.split(/\n{2,}/).map(paragraph => {
+		const paragraphs = htmlContent.split(/\n{2,}/).map((paragraph: any) => {
 			if (paragraph.trim().startsWith("* ")) {
 				const listItems = paragraph
 					.split("\n")
-					.map(line => {
+					.map((line: any) => {
 						if (line.trim().startsWith("* ")) {
 							return `<li>${line.trim().substring(2)}</li>`;
 						}
@@ -102,10 +102,10 @@ const BlogPostPage = () => {
 	};
 
 	// Helper for rendering tags
-	const renderTags = tagsArray => {
+	const renderTags = (tagsArray: any) => {
 		return (
 			<div className='blog-tags'>
-				{tagsArray.map((tag, index) => (
+				{tagsArray.map((tag: any, index: number) => (
 					<span key={index} className='tag-badge'>
 						{tag}
 					</span>

@@ -13,16 +13,16 @@ import MovingTitle from "@/components/home/moving-title/MovingTitle";
 const Home = () => {
 	return (
 		<main className='min-h-screen'>
-			{/* <Hero /> */}
-			{/* <LogoTicker /> */}
-			{/* <AboutSection /> */}
-			{/* <MySkills /> */}
-			{/* <WorkCategories /> */}
-			{/* <MovingTitle /> */}
-			{/* <WorksSection /> */}
-			{/* <BlogSection /> */}
-			{/* <CallToAction /> */}
-			{/* <Testimonials /> */}
+			<Hero />
+			<LogoTicker />
+			<AboutSection />
+			<MySkills />
+			<WorkCategories />
+			<MovingTitle />
+			<WorksSection />
+			<BlogSection />
+			<CallToAction />
+			<Testimonials />
 		</main>
 	);
 };
