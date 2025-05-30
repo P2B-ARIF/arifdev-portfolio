@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const HorizontalBlogCard = ({ post, thumb, index }) => {
+const HorizontalBlogCard = ({ post, thumb, index }: any) => {
 	return (
 		<div className='flex flex-col md:flex-row gap-6'>
 			<div className='md:w-1/3 lg:w-1/4'>
@@ -40,7 +40,7 @@ const HorizontalBlogCard = ({ post, thumb, index }) => {
 						<ArrowRight className='ml-2 h-4 w-4' />
 					</Link>
 					<div className='flex gap-2'>
-						{post.tags.map((tag, i) => (
+						{post.tags.map((tag: any, i: number) => (
 							<span
 								key={i}
 								className='px-2 py-1 text-xs rounded bg-zinc-800 text-gray-300'

@@ -7,17 +7,20 @@ import noise from "@/assets/elements/noise-overlay.351e13a3.png";
 
 const CallToAction = () => {
 	return (
-		<section>
-			<div
-				// style={{
-				// 	backgroundImage: `url(${noise.src})`,
-				// 	backgroundSize: "cover",
-				// 	backgroundRepeat: "no-repeat",
-				// 	backgroundPosition: "center",
-				// }}
-				className='py-32'
-			>
-				<div className='p-10 rounded-3xl overflow-hidden border grid grid-cols-[2.5fr_0.5fr_1.5fr] max-w-4xl mx-auto box_gradient'>
+		<section className=''>
+			<div className='py-32 relative'>
+				<div
+					className='absolute
+    bottom-[-100px] right-[0px]    w-[600px] h-[600px]    bg-[radial-gradient(circle,_rgba(80,227,194,0.4)_0%,_transparent_70%)]    rounded-full
+    blur-[120px]  mix-blend-screen  z-10'
+				/>
+				<div
+					className='absolute
+    bottom-[100px] left-[0px]    w-[600px] h-[600px]    bg-[radial-gradient(circle,_rgba(75,927,294,0.3)_0%,_transparent_70%)]    rounded-full
+    blur-[120px]  mix-blend-screen  -z-1'
+				/>
+
+				<div className='p-10 rounded-3xl border grid grid-cols-[2.5fr_0.5fr_1.5fr] max-w-4xl mx-auto box_gradient'>
 					<div className='space-y-7'>
 						<div className='flex-shrink-0 inline-flex border border-gray-800 overflow-hidden rounded-full'>
 							<div className='bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100% rounded-full'>

@@ -12,7 +12,7 @@ type Testimonial = {
 	name: string;
 	title: string;
 	company: string;
-	image: string;
+	image: string | any;
 };
 
 const testimonials: Testimonial[] = [

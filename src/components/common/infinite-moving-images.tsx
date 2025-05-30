@@ -20,7 +20,7 @@ export const InfiniteMovingImages = ({
 	speed = "fast",
 	pauseOnHover = true,
 	className,
-}: Props) => {
+}: any) => {
 	const containerRef = React.useRef<HTMLDivElement>(null);
 	const scrollerRef = React.useRef<HTMLUListElement>(null);
 
@@ -86,7 +86,7 @@ export const InfiniteMovingImages = ({
 					pauseOnHover && "hover:[animation-play-state:paused]",
 				)}
 			>
-				{items?.map((item, idx) => {
+				{items?.map((item: any, idx: number) => {
 					return (
 						<li
 							className='relative md:w-[350px] max-w-full shrink-0 rounded-xl border border-zinc-500 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] w-[250px] overflow-hidden'

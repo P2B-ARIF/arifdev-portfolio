@@ -23,10 +23,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { motion } from "framer-motion";
-import {
-	InfiniteMovingCards,
-	InfiniteMovingImages,
-} from "@/components/common/infinite-moving-images";
+import { InfiniteMovingImages } from "@/components/common/infinite-moving-images";
 
 import img1 from "@/assets/images/image1.jpg";
 import img2 from "@/assets/images/image2.jpg";

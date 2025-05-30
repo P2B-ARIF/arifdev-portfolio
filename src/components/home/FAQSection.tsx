@@ -6,7 +6,7 @@ import { useState } from "react";
 import SectionHeader from "./SectionHeader";
 
 export default function FAQSection() {
-	const [openItem, setOpenItem] = useState<null | number | any>(null > 2);
+	const [openItem, setOpenItem] = useState<null | number | any>(2);
 
 	const faqItems = [
 		{

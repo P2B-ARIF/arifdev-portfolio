@@ -51,7 +51,7 @@ const Navbar = () => {
 						<Image
 							src='/logo.png'
 							alt='logo'
-							className='w-[40px] aspect-square object-contain'
+							className='w-[40px] md:w-[50px] aspect-square object-contain'
 							width={50}
 							height={50}
 						/>

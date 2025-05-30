@@ -1,0 +1,149 @@
+/* Main Blog Post Container */
+.blog-container {
+	padding: 40px;
+	border-radius: 12px; /* Slightly rounded corners */
+	box-shadow: 0 8px 20px var(--color-shadow);
+	width: 100%; /* Take full width up to max-width */
+	box-sizing: border-box;
+	line-height: 1.7; /* Comfortable line spacing for readability */
+}
+
+/* Blog Post Title */
+.blog-title {
+	font-size: 2em; /* Large, prominent title */
+	color: var(--color-accent); /* Use variable for title color */
+	margin-bottom: 20px;
+	line-height: 1.2;
+}
+
+/* Blog Post Meta Information (Author, Date, Tags) */
+.blog-meta {
+	color: var(--color-accent);
+	font-size: 0.95em;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var(--color-accent);
+}
+
+.blog-author {
+	font-weight: bold;
+	color: var(--color-highlight);
+}
+
+.blog-date {
+	font-style: italic;
+}
+
+.blog-tags {
+	margin-top: 15px;
+	display: flex; /* Use flexbox for tags */
+	flex-wrap: wrap; /* Allow tags to wrap to the next line */
+}
+
+.tag-badge {
+	display: inline-block; /* Display as inline-block for spacing */
+	background-color: var(
+		--color-highlight
+	); /* Use variable for tag background */
+	color: black; /* White text for tags */
+	padding: 6px 12px;
+	border-radius: 20px; /* Pill-shaped tags */
+	font-size: 0.8em;
+	margin: 0 5px 5px 0; /* Spacing between tags */
+	font-weight: 500;
+}
+
+/* Individual Blog Sections */
+.blog-section {
+	margin-bottom: 35px; /* Space between sections */
+}
+
+.section-heading {
+	font-size: 1.8em;
+	color: var(--color-highlight);
+	margin-top: 0;
+	margin-bottom: 15px;
+	border-left: 5px solid var(--color-highlight);
+	padding-left: 15px;
+}
+
+.section-content {
+	font-size: 1.1em;
+	color: var(--color-accent);
+}
+
+.section-content p {
+	margin-bottom: 1em;
+}
+
+.section-content strong {
+	color: var(--color-highlight);
+	font-weight: bold;
+}
+
+.section-content ul {
+	list-style: disc; /* Default disc style */
+	padding-left: 2em; /* Indent list items */
+	margin-top: 10px;
+	margin-bottom: 15px;
+	color: var(--color-accent); /* Ensure list items are readable */
+}
+
+.section-content li {
+	margin-bottom: 5px; /* Space between list items */
+}
+
+/* Image Specific Styles */
+.blog-image-container {
+	text-align: center; /* Center the image and caption */
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.blog-image {
+	max-width: 100%; /* Ensure image doesn't overflow container */
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 8px; /* Slightly rounded corners for images */
+	border: 1px solid rgba(var(--color-highlight), 0.5); /* Lowered opacity to 0.5 */
+	box-shadow: 0 1px 20px 0.5px rgba(51, 51, 51, 0.5);
+}
+
+.blog-image-caption {
+	margin-top: 10px;
+	font-size: 0.9em;
+	color: var(--color-highlight); /* Muted light text for caption */
+	font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+	/* No changes to padding/border-radius in blog-container, as they are relative to size */
+	.blog-title {
+		font-size: 2em;
+	}
+	.section-heading {
+		font-size: 1.5em;
+		padding-left: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	/* No changes to padding/box-shadow in blog-container for responsiveness */
+	.blog-title {
+		font-size: 1.7em;
+	}
+	.section-heading {
+		font-size: 1.3em;
+		border-left-width: 3px;
+		padding-left: 8px;
+	}
+	.section-content {
+		font-size: 1em;
+	}
+	.blog-tags {
+		justify-content: flex-start; /* Left align tags on very small screens */
+	}
+	.blog-image {
+		border-radius: 4px; /* Less rounded on tiny screens */
+	}
+}

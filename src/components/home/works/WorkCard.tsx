@@ -30,7 +30,7 @@ const workList = {
 	],
 };
 
-const WorkCard = ({ idx, list, range, targetScale, progress }) => {
+const WorkCard = ({ idx, list, range, targetScale, progress }: any) => {
 	const cardRef = useRef(null);
 
 	const { scrollYProgress } = useScroll({

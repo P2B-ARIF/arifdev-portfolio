@@ -1,0 +1,47 @@
+import React from "react";
+import { FileDown, Sparkles } from "lucide-react";
+
+const AboutSection = () => {
+	return (
+		<div className='py-32 container mx-auto'>
+			<div className='w-fit self-center-safe flex items-center px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 text-gray-300'>
+				<Sparkles className='w-4 h-4 mr-2' />
+				<span className='text-sm font-medium tracking-wide'>About Me</span>
+			</div>
+
+			<h5 className='text-lg mt-10 text-gray-400'>
+				I'm a <span className='text-highlight'>junior web developer</span> and I
+				have a lot of knowledge, every day I'm pushing my learning skills.
+				Adaptable quickly, and organized well. Interested in learning the latest
+				web & software technologies quickly.
+			</h5>
+			<h5 className='text-lg mt-2 text-gray-400'>
+				I'm a junior web developer and I have a lot of knowledge, every day I'm
+				pushing <span className='text-highlight'>my learning skills</span>.
+				Adaptable quickly, and organized well. Interested in learning the latest
+				web & software technologies quickly. Able to work well in teams as well
+				as individually.{" "}
+				<span className='text-highlight'>
+					My future goal is to become a senior full-stack developer!
+				</span>
+			</h5>
+
+			<h4 className='my-5 mt-10'>
+				Next Js | Prisma | Typescript | MongoDB | MySql | Framer-Motion
+			</h4>
+
+			<div className='flex items-center gap-4'>
+				<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+					<FileDown />
+					Download Resume
+				</div>
+				<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+					<FileDown />
+					Get in touch
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default AboutSection;

@@ -15,7 +15,7 @@ const blogPosts2 = [
 			"A workaround for displaying a custom SVG arrow in shadcn's tooltip component with detailed implementation.",
 		date: "December 15, 2024",
 		readTime: "5 min read",
-		slug: "/blog/hacky-way-to-customize-shadcns-tooltip-arrows",
+		slug: "/blogs/hacky-way-to-customize-shadcns-tooltip-arrows",
 		tags: ["react", "css", "shadcn"],
 		image: "/placeholder.svg?height=300&width=400",
 		featured: true,
@@ -27,7 +27,7 @@ const blogPosts2 = [
 			"Leverage Zod's powerful features to set dynamic default values and enhance data validation with flexibility and ease.",
 		date: "December 12, 2024",
 		readTime: "3 min read",
-		slug: "/blog/setting-dynamic-default-values-with-zod-schema",
+		slug: "/blogs/setting-dynamic-default-values-with-zod-schema",
 		tags: ["zod", "typescript", "validation"],
 		image: "/placeholder.svg?height=300&width=400",
 		featured: false,
@@ -39,7 +39,7 @@ const blogPosts2 = [
 			"Enhance your recordings and presentations with dynamic zoom effects that follow your mouse cursor.",
 		date: "January 3, 2025",
 		readTime: "4 min read",
-		slug: "/blog/level-up-obs-recordings-with-zoom-to-mouse",
+		slug: "/blogs/level-up-obs-recordings-with-zoom-to-mouse",
 		tags: ["obs", "recording", "productivity"],
 		image: "/placeholder.svg?height=300&width=400",
 		featured: false,
@@ -51,7 +51,7 @@ const blogPosts2 = [
 			"Best practices and patterns for building large-scale React applications that are maintainable and performant.",
 		date: "November 28, 2024",
 		readTime: "8 min read",
-		slug: "/blog/building-scalable-react-applications",
+		slug: "/blogs/building-scalable-react-applications",
 		tags: ["react", "architecture", "best-practices"],
 		image: "/placeholder.svg?height=300&width=400",
 		featured: false,
@@ -63,7 +63,7 @@ const blogPosts2 = [
 			"Exploring the latest features and improvements in Next.js 15, including performance enhancements and new APIs.",
 		date: "November 20, 2024",
 		readTime: "6 min read",
-		slug: "/blog/nextjs-15-whats-new",
+		slug: "/blogs/nextjs-15-whats-new",
 		tags: ["nextjs", "javascript", "web-development"],
 		image: "/placeholder.svg?height=300&width=400",
 		featured: true,
@@ -90,8 +90,10 @@ const allTags = [
 
 const blogPosts = [
 	{
+		id: 1,
+		featured: true,
 		title: "Hacky Way to Customize Shadcn's Tooltip Arrows",
-		slug: "/blog/hacky-way-to-customize-shadcns-tooltip-arrows",
+		slug: "/blogs/hacky-way-to-customize-shadcns-tooltip-arrows",
 		date: "December 15, 2024",
 		readTime: "5 min read",
 		excerpt:
@@ -100,8 +102,10 @@ const blogPosts = [
 		thumbnail: "thumb",
 	},
 	{
+		id: 2,
+		featured: false,
 		title: "Setting Dynamic Default Values with Zod Schema",
-		slug: "/blog/setting-dynamic-default-values-with-zod-schema",
+		slug: "/blogs/setting-dynamic-default-values-with-zod-schema",
 		date: "December 12, 2024",
 		readTime: "3 min read",
 		excerpt:
@@ -110,8 +114,10 @@ const blogPosts = [
 		thumbnail: "thumb",
 	},
 	{
+		id: 3,
+		featured: false,
 		title: "Level Up OBS Recordings with Zoom-to-Mouse",
-		slug: "/blog/level-up-obs-recordings-with-zoom-to-mouse",
+		slug: "/blogs/level-up-obs-recordings-with-zoom-to-mouse",
 		date: "January 3, 2025",
 		readTime: "4 min read",
 		excerpt:
@@ -120,8 +126,10 @@ const blogPosts = [
 		thumbnail: "thumb",
 	},
 	{
+		id: 4,
+		featured: true,
 		title: "Making Headless UI Popovers Smarter with React State",
-		slug: "/blog/smarter-headless-ui-popovers-react-state",
+		slug: "/blogs/smarter-headless-ui-popovers-react-state",
 		date: "January 10, 2025",
 		readTime: "6 min read",
 		excerpt:
@@ -133,7 +141,7 @@ const blogPosts = [
 
 const page = () => {
 	const featuredPosts = blogPosts2.filter(post => post.featured);
-	const regularPosts = blogPosts.filter(post => !post.featured);
+	// const regularPosts = blogPosts.filter(post => !post.featured);
 
 	return (
 		<section className='min-h-screen pt-32'>
@@ -173,7 +181,7 @@ const page = () => {
 								</div>
 								<h3 className='font-medium'>
 									<Link
-										href='/blog/hacky-way-to-customize-shadcns-tooltip-arrows'
+										href='/blogs/hacky-way-to-customize-shadcns-tooltip-arrows'
 										className='hover:text-gray-800 transition-colors'
 									>
 										Hacky Way to Customize Shadcn's Tooltip Arrows
@@ -185,7 +193,7 @@ const page = () => {
 								</p>
 								<div className='flex items-center justify-between'>
 									<Link
-										href='/blog/hacky-way-to-customize-shadcns-tooltip-arrows'
+										href='/blogs/hacky-way-to-customize-shadcns-tooltip-arrows'
 										className='inline-flex items-center text-emerald-400 hover:text-emerald-300 text-sm transition-colors'
 									>
 										Read more
@@ -222,7 +230,7 @@ const page = () => {
 										</div>
 										<h3 className='font-medium'>
 											<Link
-												href='/blog/hacky-way-to-customize-shadcns-tooltip-arrows'
+												href='/blogs/hacky-way-to-customize-shadcns-tooltip-arrows'
 												className='hover:text-gray-800 transition-colors'
 											>
 												Hacky Way to Customize Shadcn's Tooltip Arrows
@@ -234,7 +242,7 @@ const page = () => {
 										</p>
 										<div className='flex items-center justify-between'>
 											<Link
-												href='/blog/hacky-way-to-customize-shadcns-tooltip-arrows'
+												href='/blogs/hacky-way-to-customize-shadcns-tooltip-arrows'
 												className='inline-flex items-center text-emerald-400 hover:text-emerald-300 text-sm transition-colors'
 											>
 												Read more

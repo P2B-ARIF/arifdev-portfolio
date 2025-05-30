@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import thumb from "@/assets/images/image3.jpg";
 
 export default function BlogSection() {
@@ -8,34 +8,20 @@ export default function BlogSection() {
 		<div className='py-16 px-4 md:px-8 lg:px-16 mt-10'>
 			<div className='max-w-6xl mx-auto'>
 				{/* Blog Label */}
-				<div className='inline-flex items-center px-3 py-1 rounded-full bg-emerald-900 text-emerald-400 mb-6'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						width='16'
-						height='16'
-						viewBox='0 0 24 24'
-						fill='none'
-						stroke='currentColor'
-						strokeWidth='2'
-						strokeLinecap='round'
-						strokeLinejoin='round'
-						className='mr-2'
-					>
-						<path d='M12 20h9' />
-						<path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z' />
-					</svg>
-					<span className='text-sm font-medium'>Blog</span>
+				<div className='w-fit self-center-safe flex items-center px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 text-gray-300'>
+					<Sparkles className='w-4 h-4 mr-2' />
+					<span className='text-sm font-medium tracking-wide'>Blog</span>
 				</div>
 
 				{/* Header Section */}
-				<div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-12'>
+				<div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-12 mt-5'>
 					<div>
-						<h2 className='text-4xl md:text-5xl font-bold mb-4'>
+						<h2 className='text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-accent to-primary/50 pb-2'>
 							Learning, Building, and
 							<br />
 							Documenting
 						</h2>
-						<p className='text-gray-400 max-w-2xl'>
+						<p className='text-gray-400 max-w-2xl '>
 							Insights and experiences from my journey as a developer—exploring
 							ideas, overcoming challenges, and sharing lessons learned along
 							the way.

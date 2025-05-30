@@ -3,20 +3,21 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+// import ColorThief from "color-thief-browser";
 import ColorThief from "color-thief-browser";
+
 import Image from "next/image";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project }: any) => {
 	const imgRef = useRef(null);
 	const [bgColor, setBgColor] = useState<string>("#f3f3f3");
 
 	useEffect(() => {
-		const img = imgRef.current;
+		const img: any = imgRef.current;
 
 		const extractColor = () => {
 			try {
-				const colorThief = new ColorThief();
-				const color = colorThief.getColor(img);
+				const color = ColorThief.getColor(img);
 
 				console.log(color, "color....");
 

@@ -15,8 +15,8 @@ const Footer = () => {
 			<div className='container mx-auto px-5'>
 				<div className='grid grid-cols-1 md:grid-cols-8 gap-3'>
 					<div className='col-span-6'>
-						<h5 className='font-bold text-lg'>Mohammad Arif</h5>
-						<h6 className='text-gray-400'>Full Stack Developer</h6>
+						<h5 className='font-bold text-xl'>Mohammad Arif</h5>
+						<h6 className='text-highlight'>Full Stack Developer</h6>
 						<p className='text-gray-400'>
 							Open for side-projects & collaborations
 						</p>

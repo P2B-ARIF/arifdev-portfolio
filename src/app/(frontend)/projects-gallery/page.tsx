@@ -60,16 +60,16 @@ interface ImageProps {
 	alt: string;
 }
 interface GalleryProps {
-	images?: ImageProps[];
-	gap?: number; // Gap size in pixels
-	defaultColumns?: number;
+	images?: ImageProps[] | any;
+	gap?: number | any; // Gap size in pixels
+	defaultColumns?: number | any;
 }
 
-const GalleryPage: React.FC<GalleryProps> = ({
+const GalleryPage = ({
 	images = defaultImages,
 	gap = 16,
 	defaultColumns = 3,
-}: GalleryProps) => {
+}: any) => {
 	const columnCount = useResponsiveColumns(defaultColumns);
 
 	const createBalancedColumns = (
@@ -123,7 +123,7 @@ const GalleryPage: React.FC<GalleryProps> = ({
 					gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
 				}}
 			>
-				{columns.map((column: ImageProps[], columnIndex) => (
+				{columns?.map((column: ImageProps[], columnIndex) => (
 					<div
 						key={`column-${columnIndex}`}
 						className='flex flex-col'

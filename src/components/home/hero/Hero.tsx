@@ -38,7 +38,7 @@ const Hero = () => {
 		};
 	}, []);
 
-	const variants = {
+	const variants: any = {
 		default: {
 			x: mousePosition.x - 4,
 			y: mousePosition.y - 4,
@@ -175,13 +175,7 @@ const Hero = () => {
 					</motion.h1>
 				</div>
 
-				<motion.div
-					style={{ y: textPositionY2 }}
-					// initial={{ y: 100 }}
-					// animate={{ y: 0 }}
-					// transition={{ duration: 0.3 }}
-					className='text-center md:text-left mt-10 2xl:mt-20'
-				>
+				<div className='text-center md:text-left mt-10 2xl:mt-20'>
 					<div className='text-sm md:text-lg 2xl:text-xl'>
 						<h3>
 							Hi, I'm <span className='text-blue-400'>Mohammad Arif</span> 👋
@@ -194,7 +188,7 @@ const Hero = () => {
 						<Instagram />
 						<Linkedin />
 					</div>
-				</motion.div>
+				</div>
 
 				<div className='flex md:hidden items-center gap-5 justify-center mt-5'>
 					<div className=' relative rounded-lg bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100%'>

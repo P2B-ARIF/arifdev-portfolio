@@ -4,7 +4,7 @@ import React from "react";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Link from "next/link";
 
-const BlogCard = ({ post }) => {
+const BlogCard = ({ post }: any) => {
 	return (
 		<div className='bg-gray-900/50 border border-gray-700 rounded-lg overflow-hidden group hover:border-gray-600 transition-all duration-300'>
 			<div className='relative aspect-[16/10] overflow-hidden'>
@@ -46,9 +46,9 @@ const BlogCard = ({ post }) => {
 						<ArrowRight className='ml-2 h-4 w-4' />
 					</Link>
 					<div className='flex gap-2'>
-						{post.tags.slice(0, 2).map(tag => (
+						{post.tags.slice(0, 2).map((tag: any, i: number) => (
 							<span
-								key={tag}
+								key={i}
 								className='bg-gray-800 text-gray-300 hover:bg-gray-700 text-xs px-2 py-1 rounded transition-colors cursor-pointer'
 							>
 								{tag}

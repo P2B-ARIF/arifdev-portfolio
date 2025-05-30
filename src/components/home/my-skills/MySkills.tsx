@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Github,
 	MapPin,
@@ -11,10 +13,21 @@ import {
 	CheckCircle2,
 	User,
 } from "lucide-react";
+import { FaFileUpload, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { useEffect } from "react";
+import GitHubCalendarCard from "./GitHubCalendarCard";
+import Skills from "./Skills";
+import { Arrow } from "@radix-ui/react-select";
 
 const MySkills = () => {
 	return (
-		<div className='max-w-7xl container mx-auto w-full text-white px-3'>
+		<div className='max-w-7xl container mx-auto w-full relative text-white px-3'>
+			<div
+				className={
+					"w-32 h-[500px] bg-gradient-to-t from-blue-400/70 to-primary rotate-[30deg] absolute top-0 right-0 blur-2xl"
+				}
+			></div>
+
 			<div className='md:grid md:grid-cols-12 md:grid-rows-7 gap-4 h-full w-full'>
 				<div className='md:col-span-7 md:row-span-7 grid md:grid-cols-7 md:grid-rows-7 gap-3 max-md:mb-3'>
 					<div className='col-span-7 row-span-3 grid md:grid-cols-7 gap-3'>
@@ -31,30 +44,32 @@ const MySkills = () => {
 									style={{
 										border: 0,
 									}}
-									allowFullScreen=''
+									// allowFullScreen=''
 									loading='lazy'
 									referrerPolicy='no-referrer-when-downgrade'
 									className='grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300'
 								></iframe>
-								<div className='absolute bottom-4 left-4 z-10 bg-zinc-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full'>
+								<div className='absolute bottom-4 left-4 z-10 bg-zinc-900/80 backdrop-blur-sm px-3 py-1 rounded-full'>
 									<span className='text-sm'>Rangunia, Bangladesh</span>
 								</div>
 							</div>
 						</div>
+
+						{/* speed */}
 						<div className='col-span-4 md:col-span-3 rounded-lg overflow-hidden relative border border-gray-600 p-2 bg-slate-500/20 backdrop-blur-lg'>
-							<div className='rounded-md overflow-hidden h-full flex flex-col justify-between'>
+							<div className='rounded-md overflow-hidden h-full flex flex-col justify-between p-2'>
 								<div className='flex items-center mb-4'>
 									<Keyboard className='w-5 h-5 mr-2 text-emerald-400' />
 									<span className='font-medium'>Typing speed</span>
 								</div>
-								<div className='flex items-end'>
-									<div className='relative'>
-										<span className='text-[100px] font-bold leading-none'>
+								<div className='flex items-end h-full relative'>
+									<div className=''>
+										<div className='absolute top-10 -z-1 right-0 text-[160px] font-bold leading-none text-transparent bg-clip-text from-slate-600/80 to-primary/70 bg-gradient-to-r opacity-70'>
+											140
+										</div>
+										<span className='text-[80px] font-bold leading-none'>
 											140
 										</span>
-										<div className='absolute top-0 right-0 text-[100px] font-bold leading-none text-zinc-800'>
-											000
-										</div>
 									</div>
 									<span className='text-2xl mb-4 ml-2'>wpm</span>
 								</div>
@@ -76,19 +91,60 @@ const MySkills = () => {
 						</div>
 					</div>
 					<div className='col-span-7 row-span-1 grid grid-cols-2 md:grid-cols-7 gap-3'>
-						<div className='md:col-span-1 border_style'>facebook</div>
-						<div className='md:col-span-1 border_style'>linkedin</div>
-						<div className='md:col-span-3 border_style'>whatsapp</div>
-						<div className='md:col-span-2 border_style'>thinking</div>
+						<div className='md:col-span-1 border_style'>
+							<div className='bg-primary border_style rounded-md h-full w-full flex items-center justify-center'>
+								<Facebook size={36} className='text-blue-500' />
+							</div>
+						</div>
+						<div className='md:col-span-1 border_style'>
+							<div className='bg-primary border_style rounded-md h-full w-full flex items-center justify-center'>
+								<Linkedin size={36} className='text-blue-400' />
+							</div>
+						</div>
+						<div className='md:col-span-3 border_style'>
+							<div className='bg-primary border_style rounded-md h-full w-full flex items-center gap-5 text-lg justify-center'>
+								Discover more projects <ArrowRight className='w-4 h-4' />
+							</div>
+						</div>
+						<div className='md:col-span-2 border_style'>
+							<div className='bg-primary border_style rounded-md h-full w-full flex items-center gap-5 text-lg justify-center'>
+								Thinking.....
+							</div>
+						</div>
 					</div>
-					<div className='col-span-7 md:row-span-3 border_style'>map</div>
+
+					{/* github map */}
+					<div className='col-span-7 md:row-span-3 border_style h-full'>
+						<GitHubCalendarCard />
+					</div>
 				</div>
 
 				<div className='md:col-span-5 row-span-7 grid md:grid-rows-7 gap-3'>
-					<div className='row-span-6 border_style'>skills</div>
+					<div className='row-span-6 border_style'>
+						<Skills />
+					</div>
 					<div className='row-span-1  grid grid-cols-2 gap-3'>
-						<div className='border_style'>Contact</div>
-						<div className='border_style'>resume</div>
+						<div className='border_style'>
+							<div className='bg-primary border_style rounded-md h-full w-full space-y-2'>
+								<h6 className='text-sm ml-1'>Something will Happend</h6>
+								<div className='flex items-center gap-2'>
+									<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+										<FaGithub />
+										Email
+									</div>
+									<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+										<FaWhatsapp />
+										Message
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className='border_style'>
+							<div className=' h-full w-full flex items-center gap-3 text-lg justify-center'>
+								<FaFileUpload size={18} />
+								Download Resume
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
