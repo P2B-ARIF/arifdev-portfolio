@@ -144,8 +144,8 @@ const Hero = () => {
 						animate={cursorVariant}
 						className='pointer-events-none fixed top-0 left-0 h-2 w-2 rounded-full bg-white cursor-none'
 					/>
-					<motion.h1
-						style={{ y: textPositionY }}
+					<h1
+						// style={{ y: textPositionY }}
 						className='text-5xl lg:text-7xl xl:text-[120px] 2xl:text-[140px] font-extrabold uppercase flex flex-col items-center justify-center mx-auto max-w-[1100px] w-full'
 					>
 						<motion.span
@@ -172,7 +172,7 @@ const Hero = () => {
 							<br />
 							Passion
 						</motion.span>
-					</motion.h1>
+					</h1>
 				</div>
 
 				<div className='text-center md:text-left mt-10 2xl:mt-20'>

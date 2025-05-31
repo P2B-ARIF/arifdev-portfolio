@@ -18,35 +18,42 @@ const navLinks = [
 		icon: FileText,
 	},
 	{ id: 5, href: "/blogs", label: "Blogs", icon: Handshake },
-	// { id: 5, href: "/contact", label: "Contact" },
 ];
 
 const Navbar = () => {
-	const [isScroll, setIsScroll] = useState(false);
-	const [hide, setHide] = useState(false);
-	const [scrollPosition, setScrollPosition] = useState(0);
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [isHidden, setIsHidden] = useState(false);
 	const pathname = usePathname();
 
 	const { scrollY } = useScroll();
+
 	useMotionValueEvent(scrollY, "change", latest => {
-		const previous: any = scrollY.getPrevious();
-		setIsScroll(latest > 200);
-		setHide(latest > previous);
-		setScrollPosition(latest);
+		const previous = scrollY.getPrevious();
+
+		// navbar background toggle
+		setIsScrolled(latest > 80);
+
+		// hide on scroll down, show on scroll up
+		if (latest > previous && latest > 100) {
+			setIsHidden(true); // scroll down → hide
+		} else {
+			setIsHidden(false); // scroll up → show
+		}
 	});
 
 	return (
-		<div className=''>
+		<div className='z-50'>
+			{/* ✅ Desktop Navbar */}
 			<div
-				className={`${
-					hide
-						? "translate-y-[-100px]"
-						: isScroll
-						? "-translate-y-[100px] bg-primary/80 backdrop-blur-lg border-b border-secondary/80 shadow-lg"
-						: ""
-				} absolute top-0 left-0 w-full z-50 transition-all duration-300 ease-linear max-md:hidden `}
+				className={`fixed top-0 z-50 left-0 w-full transition-all duration-300 ease-in-out ${
+					isHidden ? "-translate-y-full" : "translate-y-0"
+				} ${
+					isScrolled
+						? "bg-primary/80 backdrop-blur-md shadow-md"
+						: "bg-transparent"
+				} hidden md:block`}
 			>
-				<div className='flex items-center justify-between container mx-auto py-8 2xl:py-10'>
+				<div className='flex items-center justify-between container mx-auto px-5 py-6 md:px-0'>
 					<Link href='/' className='font-semibold uppercase text-2xl'>
 						<Image
 							src='/logo.png'
@@ -56,17 +63,17 @@ const Navbar = () => {
 							height={50}
 						/>
 					</Link>
-					<div className='flex items-center gap-5 perspective-normal'>
+					<div className='flex items-center gap-5'>
 						<div className='flex items-center gap-10'>
-							{navLinks?.map((list, idx) => (
-								<Link key={idx} href={list.href}>
+							{navLinks.map(list => (
+								<Link key={list.id} href={list.href}>
 									{list.label}
 								</Link>
 							))}
 						</div>
 
-						<div className='ml-10 relative rounded-lg bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100%'>
-							<div className='absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-blue-400 via-blue-400 to-blue-700 rounded-lg blur-md filter group-hover:opacity-100 group-hover:duration-200 animate-rotate-border'></div>
+						<div className='ml-10 relative rounded-lg bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border'>
+							<div className='absolute inset-0 opacity-60 transition-all bg-gradient-to-r from-blue-400 via-blue-400 to-blue-700 rounded-lg blur-md filter'></div>
 							<Link
 								href='/contact'
 								className='relative flex items-center gap-2 px-4 py-2 bg-dark text-accent rounded-lg'
@@ -78,16 +85,16 @@ const Navbar = () => {
 									height='10'
 									width='10'
 									fill='none'
-									className='mt-0.5 hover:ml-2 transition-all duration-300 ease-linear -mr-1 stroke-white stroke-2 '
+									className='mt-0.5 hover:ml-2 transition-all duration-300 ease-linear -mr-1 stroke-white stroke-2'
 								>
 									<path
 										d='M0 5h7'
 										className='transition opacity-0 group-hover:opacity-100'
-									></path>
+									/>
 									<path
 										d='M1 1l4 4-4 4'
 										className='transition group-hover:translate-x-[3px]'
-									></path>
+									/>
 								</svg>
 							</Link>
 						</div>
@@ -95,29 +102,28 @@ const Navbar = () => {
 				</div>
 			</div>
 
+			{/* ✅ Mobile Bottom Navbar */}
 			<div
-				className={`md:hidden 
-			${
-				hide ? "translate-y-[100px]" : isScroll ? "translate-y-[100px]" : ""
-			} fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md px-10 py-3 rounded-full bg-gradient-to-r from-primary/70 to-secondary/70 backdrop-blur-lg border border-gray-700 shadow-lg z-50`}
+				className={`fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md px-10 py-3 rounded-full bg-gradient-to-r from-primary/70 to-secondary/70 backdrop-blur-lg border border-gray-700 shadow-lg z-50 md:hidden transition-all duration-300 ${
+					isHidden
+						? "translate-y-[100px] opacity-0"
+						: "translate-y-0 opacity-100"
+				}`}
 			>
-				<nav className='flex gap-6 items-center justify-between transition-all duration-300 ease-linear'>
-					{navLinks?.map(({ href, icon: Icon }) => {
+				<nav className='flex gap-6 items-center justify-between'>
+					{navLinks.map(({ href, icon: Icon }) => {
 						const isActive = pathname === href;
-
 						return (
 							<Link
 								key={href}
 								href={href}
-								className={`flex flex-col items-center gap-1 text-xs transition-all duration-300 ease-linear p-2 ${
+								className={`flex flex-col items-center gap-1 text-xs p-2 transition-all duration-300 ease-in-out ${
 									isActive
-										? "text-white scale-110 bg-secondary/50  rounded-full border border-accent/20"
+										? "text-white scale-110 bg-secondary/50 rounded-full border border-accent/20"
 										: "text-gray-300 hover:text-white"
 								}`}
 							>
 								<Icon className='w-5 h-5' />
-								{/* Optional text below icons */}
-								{/* <span className='text-[10px]'>{label}</span> */}
 							</Link>
 						);
 					})}

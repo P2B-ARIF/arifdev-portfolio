@@ -126,23 +126,28 @@ const MySkills = () => {
 					<div className='row-span-1  grid grid-cols-2 gap-3'>
 						<div className='border_style'>
 							<div className='bg-primary border_style rounded-md h-full w-full space-y-2'>
-								<h6 className='text-sm ml-1'>Something will Happend</h6>
+								<h6 className='text-sm ml-1'>
+									Ready to Connect & Collaborate?
+								</h6>
 								<div className='flex items-center gap-2'>
-									<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+									{/* <div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
 										<FaGithub />
 										Email
-									</div>
-									<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+									</div> */}
+									<div className='w-full bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
 										<FaWhatsapp />
-										Message
+										Connect on WhatsApp
 									</div>
 								</div>
 							</div>
 						</div>
 						<div className='border_style'>
-							<div className=' h-full w-full flex items-center gap-3 text-lg justify-center'>
-								<FaFileUpload size={18} />
-								Download Resume
+							<div className='bg-primary border_style rounded-md h-full w-full space-y-2'>
+								<h6 className='text-sm ml-1'>Ready for Impact?</h6>
+								<div className='w-full bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+									<FaFileUpload size={18} />
+									Download Resume
+								</div>
 							</div>
 						</div>
 					</div>

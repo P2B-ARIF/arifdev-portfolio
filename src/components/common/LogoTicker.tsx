@@ -28,7 +28,7 @@ const LogoTicker = () => {
 								duration: 20,
 								ease: "linear",
 							}}
-							className='flex flex-none gap-14'
+							className='flex flex-none gap-7 md:gap-14'
 						>
 							{[
 								logo1,
@@ -59,7 +59,7 @@ const LogoTicker = () => {
 								duration: 20,
 								ease: "linear",
 							}}
-							className='flex flex-none gap-14 ml-14'
+							className='flex flex-none gap-7 md:gap-14 ml-14'
 						>
 							{[
 								logo1,

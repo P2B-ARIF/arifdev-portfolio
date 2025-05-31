@@ -89,3 +89,12 @@ body {
 		}
 	}
 }
+
+code {
+	color: var(--color-zinc-200);
+	font-weight: semibold;
+	font-size: 0.8em;
+	background-color: var(--color-zinc-600);
+	padding: 0.2em 0.4em;
+	border-radius: 0.2em;
+}

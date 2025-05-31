@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FileDown, Sparkles } from "lucide-react";
 import Image from "next/image";
 import img from "@/assets/images/image1.jpg";
@@ -8,35 +8,49 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const AboutSection = () => {
 	const containRef = useRef(null);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+		handleResize();
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	const { scrollYProgress } = useScroll({
 		target: containRef,
 		offset: ["start 80%", "start start"],
 	});
 
-	const y = useTransform(scrollYProgress, [0, 1], ["120px", "-80px"]);
+	const y = useTransform(
+		scrollYProgress,
+		[0, 1],
+		isMobile ? ["150px", "-20px"] : ["120px", "-80px"],
+	);
 	const text = useTransform(scrollYProgress, [0, 1], ["0px", "140px"]);
 
 	return (
 		<div
 			ref={containRef}
-			className='py-32 container mx-auto grid grid-cols-2 gap-16'
+			className='py-32 max-w-screen-xl 2xl:max-w-screen-2xl container mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-16 px-5'
 		>
 			<div>
-				<h1 className='text-6xl font-bold uppercase'>
+				<h1 className='text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold uppercase'>
 					Hi! I'm Arif, I love making things that
 				</h1>
 
 				<motion.div
 					style={{ y }}
-					className='w-full self-end mr-auto justify-end flex h-[380px] rounded-md overflow-hidden mt-10'
+					className='w-full self-end mr-auto justify-end flex h-[380px] rounded-md overflow-hidden mt-10 '
 				>
 					<Image
 						src={img}
 						width={400}
 						height={400}
 						alt='Picture of the author'
-						className='w-[300px] h-full object-cover'
+						className='w-[300px] h-full object-cover rounded-md '
 					/>
 				</motion.div>
 			</div>
@@ -63,7 +77,7 @@ const AboutSection = () => {
 					</span>
 				</h5>
 
-				<h4 className='my-5 mt-10'>
+				<h4 className='my-5 mt-5 md:mt-10'>
 					Next Js | Prisma | Typescript | MongoDB | MySql | Framer-Motion
 				</h4>
 

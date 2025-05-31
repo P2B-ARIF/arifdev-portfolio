@@ -16,17 +16,15 @@ const Home = () => {
 			<Hero />
 			<LogoTicker />
 			<AboutSection />
-			<MySkills />
-			<WorkCategories />
-			<MovingTitle />
-			<WorksSection />
-			<BlogSection />
-			<CallToAction />
-			<Testimonials />
+			{/* <MySkills /> */}
+			{/* <WorkCategories /> */}
+			{/* <MovingTitle /> */}
+			{/* <WorksSection /> */}
+			{/* <BlogSection /> */}
+			{/* <CallToAction /> */}
+			{/* <Testimonials /> */}
 		</main>
 	);
 };
-
-// ============
 
 export default Home;
