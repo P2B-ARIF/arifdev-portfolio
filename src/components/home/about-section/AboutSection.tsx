@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { FileDown, Sparkles } from "lucide-react";
+import { FileDown, Sparkles, Telescope } from "lucide-react";
 import Image from "next/image";
 import img from "@/assets/images/image1.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -27,9 +27,13 @@ const AboutSection = () => {
 	const y = useTransform(
 		scrollYProgress,
 		[0, 1],
-		isMobile ? ["150px", "-20px"] : ["120px", "-80px"],
+		isMobile ? ["150px", "-20px"] : ["200px", "-100px"],
 	);
-	const text = useTransform(scrollYProgress, [0, 1], ["0px", "140px"]);
+	const text = useTransform(
+		scrollYProgress,
+		[0, 1],
+		isMobile ? ["1000px", "20px"] : ["0px", "220px"],
+	);
 
 	return (
 		<div
@@ -38,7 +42,7 @@ const AboutSection = () => {
 		>
 			<div>
 				<h1 className='text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold uppercase'>
-					Hi! I'm Arif, I love making things that
+					Ambitious build? Delivered with precision and speed.
 				</h1>
 
 				<motion.div
@@ -61,33 +65,48 @@ const AboutSection = () => {
 				</div>
 
 				<h5 className='text-lg mt-10 text-gray-400'>
-					I'm a <span className='text-highlight'>junior web developer</span> and
+					{/* I'm a <span className='text-highlight'>junior web developer</span> and
 					I have a lot of knowledge, every day I'm pushing my learning skills.
 					Adaptable quickly, and organized well. Interested in learning the
-					latest web & software technologies quickly.
+					latest web & software technologies quickly. */}
+					Hello!{" "}
+					<span className='text-highlight'>
+						I’m Arif, a Full Stack Web Developer
+					</span>{" "}
+					from Bangladesh who loves building clean, fast, and scalable web
+					applications. I work with{" "}
+					<span className='text-highlight'>modern</span> technologies like
+					React, Next.js, TypeScript, Node.js, MongoDB, and Prisma — from
+					frontend UI design to backend logic, I bring{" "}
+					<span className='text-highlight'>complete solutions</span> to life
+					with attention to performance and detail.
 				</h5>
 				<h5 className='text-lg mt-5 text-gray-400'>
-					I'm a junior web developer and I have a lot of knowledge, every day
-					I'm pushing <span className='text-highlight'>my learning skills</span>
-					. Adaptable quickly, and organized well. Interested in learning the
-					latest web & software technologies quickly. Able to work well in teams
-					as well as individually.{" "}
+					Whether you’re a startup looking to launch your first product, or an
+					established business wanting to{" "}
 					<span className='text-highlight'>
-						My future goal is to become a senior full-stack developer!
-					</span>
+						{" "}
+						optimize your platform — I’m here to help.
+					</span>{" "}
+					I care deeply about writing clean code, creating{" "}
+					<span className='text-highlight'>smooth user experiences,</span> and
+					delivering results that meet real-world needs. Let’s collaborate and
+					build something{" "}
+					<span className='text-highlight'>impactful together.</span>
 				</h5>
 
-				<h4 className='my-5 mt-5 md:mt-10'>
+				<h4 className='my-5 mt-5 md:mt-8 text-sm md:text-base'>
 					Next Js | Prisma | Typescript | MongoDB | MySql | Framer-Motion
 				</h4>
 
-				<div className='flex items-center gap-4'>
+				<div className='flex items-center gap-2 md:gap-4'>
 					<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
-						<FileDown />
-						Download Resume
+						<FileDown size={18} />
+						Download <span className={"md:hidden"}>CV</span>
+						<span className='max-md:hidden'>Resume</span>
 					</div>
 					<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
-						<FileDown />
+						<Telescope size={18} />
 						Explore About me
 					</div>
 				</div>

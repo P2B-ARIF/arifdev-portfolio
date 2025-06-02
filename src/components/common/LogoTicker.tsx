@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import logo1 from "@/assets/company-logo/logo-acme.png";
 import logo2 from "@/assets/company-logo/logo-apex.png";
 import logo3 from "@/assets/company-logo/logo-celestial.png";
 import logo4 from "@/assets/company-logo/logo-echo.png";
 import logo5 from "@/assets/company-logo/logo-pulse.png";
 import logo6 from "@/assets/company-logo/logo-quantum.png";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const LogoTicker = () => {
 	return (
