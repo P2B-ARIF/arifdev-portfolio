@@ -174,6 +174,7 @@ const Hero = () => {
 							</span>
 							,
 						</motion.span>
+<<<<<<< HEAD
 						<span className='flex'>
 							<motion.span
 								onMouseEnter={textEnter}
@@ -204,6 +205,20 @@ const Hero = () => {
 								Passion
 							</span> */}
 						</span>
+=======
+						<motion.span
+							onMouseEnter={textEnter}
+							onMouseLeave={textLeave}
+							// initial={{ x: -200 }}
+							// animate={{ x: 0 }}
+							className='text-end 2xl:ml-32 text-3xl lg:text-4xl xl:text-6xl 2xl:text-7xl'
+						>
+							{/* <span className='text-end ml-0 md:ml-48'> */}
+							Create with
+							<br />
+							Passion
+						</motion.span>
+>>>>>>> 1424e0b (asdf)
 					</h1>
 				</div>
 

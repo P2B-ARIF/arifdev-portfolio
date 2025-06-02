@@ -1,7 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+<<<<<<< HEAD
 import { FileDown, Sparkles, Telescope } from "lucide-react";
+=======
+import { FileDown, Sparkles } from "lucide-react";
+>>>>>>> 1424e0b (asdf)
 import Image from "next/image";
 import img from "@/assets/images/image1.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -27,6 +31,7 @@ const AboutSection = () => {
 	const y = useTransform(
 		scrollYProgress,
 		[0, 1],
+<<<<<<< HEAD
 		isMobile ? ["150px", "-20px"] : ["200px", "-100px"],
 	);
 	const text = useTransform(
@@ -34,6 +39,11 @@ const AboutSection = () => {
 		[0, 1],
 		isMobile ? ["1000px", "20px"] : ["0px", "220px"],
 	);
+=======
+		isMobile ? ["150px", "-20px"] : ["120px", "-80px"],
+	);
+	const text = useTransform(scrollYProgress, [0, 1], ["0px", "140px"]);
+>>>>>>> 1424e0b (asdf)
 
 	return (
 		<div
@@ -42,7 +52,11 @@ const AboutSection = () => {
 		>
 			<div>
 				<h1 className='text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold uppercase'>
+<<<<<<< HEAD
 					Ambitious build? Delivered with precision and speed.
+=======
+					Hi! I'm Arif, I love making things that
+>>>>>>> 1424e0b (asdf)
 				</h1>
 
 				<motion.div
@@ -95,7 +109,11 @@ const AboutSection = () => {
 					<span className='text-highlight'>impactful together.</span>
 				</h5>
 
+<<<<<<< HEAD
 				<h4 className='my-5 mt-5 md:mt-8 text-sm md:text-base'>
+=======
+				<h4 className='my-5 mt-5 md:mt-10'>
+>>>>>>> 1424e0b (asdf)
 					Next Js | Prisma | Typescript | MongoDB | MySql | Framer-Motion
 				</h4>
 

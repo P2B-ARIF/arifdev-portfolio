@@ -22,8 +22,7 @@ interface GitHubData {
 
 const GitHubCalendarCard = () => {
 	const username = "P2B-ARIF";
-	const token =
-		"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";
+	const token = process.env.GITHUB_TOKEN;
 	const [contributions, setContributions] = useState(null);
 
 	// console.log(process.env.GITHUB_TOKEN, "tokne");
