@@ -61,8 +61,6 @@ const GitHubCalendarCard = () => {
 		fetchGitHubData();
 	}, []);
 
-	console.log(contributions, "contributions");
-
 	return (
 		<div className='p-2 text-accent w-full flex flex-col '>
 			<div className='flex justify-between items-center mb-4 h-full'>
