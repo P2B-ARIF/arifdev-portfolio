@@ -92,10 +92,6 @@ const Hero = () => {
 			ref={sectionRef}
 			style={{
 				backgroundImage: `url(${starsBg.src})`,
-				// backgroundRepeat: "no-repeat",
-				// backgroundPosition: "center",
-				// backgroundSize: "cover",
-				// cursor: "none",
 				backgroundPositionY: backgroundPositionY,
 			}}
 			animate={{ backgroundPositionX: starsBg?.width }}
@@ -110,13 +106,31 @@ const Hero = () => {
 			/>
 
 			<div className='absolute bottom-20 md:bottom-0 right-0 md:right-20 flex flex-col items-center gap-10'>
-				<div className='md:hidden flex flex-col mb-10 items-center gap-4 mt-3 max-md:justify-center'>
-					<Facebook size={18} />
-					<Instagram size={18} />
-					<Linkedin size={18} />
+				<div className='md:hidden relative flex flex-col mb-5 items-center gap-4 mt-3 max-md:justify-center'>
+					<a
+						href='https://www.facebook.com/mohammad.arif280'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						<Facebook size={18} />
+					</a>
+					<a
+						href='https://www.instagram.com/mohammad.arif280'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						<Instagram size={18} />
+					</a>
+					<a
+						href='https://www.linkedin.com/in/mdarif319/'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						<Linkedin size={18} />
+					</a>
 				</div>
 
-				<h1 className='rotate-90 text-sm'>Scroll Down</h1>
+				<h1 className='rotate-90 text-sm '>Scroll Down</h1>
 				<div className='w-[1px] h-10 bg-accent rounded-full mr-1'></div>
 			</div>
 
@@ -137,7 +151,7 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<div className='h-full w-full container mx-auto mt-52 md:mt-40 2xl:mt-60'>
+			<div className='h-full w-full container mx-auto mt-48 md:mt-40 2xl:mt-60'>
 				<div className='relative '>
 					<motion.div
 						variants={variants}
@@ -160,22 +174,40 @@ const Hero = () => {
 							</span>
 							,
 						</motion.span>
-						<motion.span
-							onMouseEnter={textEnter}
-							onMouseLeave={textLeave}
-							// initial={{ x: -200 }}
-							// animate={{ x: 0 }}
-							className='text-end 2xl:ml-32 text-3xl lg:text-4xl xl:text-6xl 2xl:text-7xl'
-						>
-							{/* <span className='text-end ml-0 md:ml-48'> */}
-							Create with
-							<br />
-							Passion
-						</motion.span>
+						<span className='flex'>
+							<motion.span
+								onMouseEnter={textEnter}
+								onMouseLeave={textLeave}
+								// initial={{ x: -200 }}
+								// animate={{ x: 0 }}
+								className='text-end 2xl:ml-32 text-2xl lg:text-4xl xl:text-6xl 2xl:text-7xl max-md:leading-6'
+							>
+								{/* <span className='text-end ml-0 md:ml-48'> */}
+								Design with
+								<br />
+								Precision
+							</motion.span>
+							<span className='max-sm:hidden text-[25.5px] mt-[6px]'>
+								<span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-700 '>
+									Deliver{" "}
+								</span>
+								with
+								<br />
+								Passion
+							</span>
+							{/* <span className='text-[25.5px] top-10 right-8  relative -rotate-90 text-right'>
+								<span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-700 '>
+									Deliver{" "}
+								</span>
+								with
+								<br />
+								Passion
+							</span> */}
+						</span>
 					</h1>
 				</div>
 
-				<div className='text-center md:text-left mt-10 2xl:mt-20'>
+				<div className='text-center relative z-10 md:text-left mt-10 2xl:mt-40 max-md:w-[90%] mx-auto'>
 					<div className='text-sm md:text-lg 2xl:text-xl'>
 						<h3>
 							Hi, I'm <span className='text-blue-400'>Mohammad Arif</span> 👋
@@ -184,9 +216,27 @@ const Hero = () => {
 						<h4>through clean code and intuitive design</h4>
 					</div>
 					<div className='hidden md:flex items-center gap-4 mt-3 max-md:justify-center'>
-						<Facebook />
-						<Instagram />
-						<Linkedin />
+						<a
+							href='https://www.facebook.com/mohammad.arif280'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<Facebook size={22} />
+						</a>
+						<a
+							href='https://www.instagram.com/mohammad.arif280'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<Instagram size={22} />
+						</a>
+						<a
+							href='https://www.linkedin.com/in/mdarif319/'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<Linkedin size={22} />
+						</a>
 					</div>
 				</div>
 

@@ -241,7 +241,7 @@ const post = posts[1];
 
 const BlogPostPage = () => {
 	// Helper function to render content with bolding, line breaks, and basic lists
-	const renderContent = contentString => {
+	const renderContent = (contentString: any) => {
 		let htmlContent = contentString;
 
 		// This line is crucial for transforming `text` into <code>text</code>
@@ -252,30 +252,32 @@ const BlogPostPage = () => {
 
 		// Simple list rendering for markdown lists starting with "* "
 		// This is a basic approach and might not handle complex nested lists or other markdown features
-		const paragraphs = htmlContent.split(/\n{2,}/).map((paragraph, pIndex) => {
-			if (paragraph.trim().startsWith("* ")) {
-				const listItems = paragraph
-					.split("\n")
-					.map(line => {
-						if (line.trim().startsWith("* ")) {
-							// Convert **text** inside list items
-							const listItemContent = line
-								.trim()
-								.substring(2)
-								.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-							return `<li>${listItemContent}</li>`;
-						}
-						return ""; // Return empty string for lines not starting with *
-					})
-					.filter(Boolean); // Remove empty strings
+		const paragraphs = htmlContent
+			.split(/\n{2,}/)
+			.map((paragraph: any, pIndex: any) => {
+				if (paragraph.trim().startsWith("* ")) {
+					const listItems = paragraph
+						.split("\n")
+						.map((line: any) => {
+							if (line.trim().startsWith("* ")) {
+								// Convert **text** inside list items
+								const listItemContent = line
+									.trim()
+									.substring(2)
+									.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+								return `<li key={pIndex}>${listItemContent}</li>`;
+							}
+							return ""; // Return empty string for lines not starting with *
+						})
+						.filter(Boolean); // Remove empty strings
 
-				if (listItems.length > 0) {
-					return `<ul key={pIndex}>${listItems.join("")}</ul>`;
+					if (listItems.length > 0) {
+						return `<ul key={pIndex}>${listItems.join("")}</ul>`;
+					}
 				}
-			}
-			// For regular paragraphs, replace single newlines with <br />
-			return `<p key={pIndex}>${paragraph.replace(/\n/g, "<br />")}</p>`;
-		});
+				// For regular paragraphs, replace single newlines with <br />
+				return `<p key={pIndex}>${paragraph.replace(/\n/g, "<br />")}</p>`;
+			});
 
 		return { __html: paragraphs.join("") };
 	};
