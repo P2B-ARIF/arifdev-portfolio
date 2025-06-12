@@ -27,6 +27,7 @@ const AboutSection = () => {
 	const y = useTransform(
 		scrollYProgress,
 		[0, 1],
+
 		isMobile ? ["150px", "-20px"] : ["200px", "-100px"],
 	);
 	const text = useTransform(

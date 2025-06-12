@@ -247,6 +247,9 @@ const BlogPostPage = () => {
 		// This line is crucial for transforming `text` into <code>text</code>
 		htmlContent = htmlContent.replace(/`(.*?)`/g, "`<code>$1</code>`");
 
+		// This line is crucial for transforming `text` into <code>text</code>
+		htmlContent = htmlContent.replace(/`(.*?)`/g, "`<code>$1</code>`");
+
 		// Bold text (**)
 		htmlContent = htmlContent.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 
@@ -254,7 +257,7 @@ const BlogPostPage = () => {
 		// This is a basic approach and might not handle complex nested lists or other markdown features
 		const paragraphs = htmlContent
 			.split(/\n{2,}/)
-			.map((paragraph: any, pIndex: any) => {
+			.map((paragraph: any, pIndex: number) => {
 				if (paragraph.trim().startsWith("* ")) {
 					const listItems = paragraph
 						.split("\n")
@@ -265,7 +268,7 @@ const BlogPostPage = () => {
 									.trim()
 									.substring(2)
 									.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-								return `<li key={pIndex}>${listItemContent}</li>`;
+								return `<li>${listItemContent}</li>`;
 							}
 							return ""; // Return empty string for lines not starting with *
 						})
@@ -283,10 +286,10 @@ const BlogPostPage = () => {
 	};
 
 	// Helper for rendering tags
-	const renderTags = tagsArray => {
+	const renderTags = (tagsArray: any) => {
 		return (
 			<div className='blog-tags'>
-				{tagsArray.map((tag, index) => (
+				{tagsArray.map((tag: any, index: number) => (
 					<span key={index} className='tag-badge'>
 						{tag}
 					</span>
@@ -331,6 +334,22 @@ const BlogPostPage = () => {
 								</figcaption>
 							)}
 						</figure>
+					) : section.type === "code" ? ( // Handle code blocks
+						<div className='blog-code-block'>
+							{section.heading && (
+								<h3 className='code-block-heading'>{section.heading}</h3>
+							)}
+							<pre>
+								<code className={`language-${section.language}`}>
+									{section.code}
+								</code>
+							</pre>
+							{section.caption && (
+								<figcaption className='code-block-caption'>
+									{section.caption}
+								</figcaption>
+							)}
+						</div>
 					) : section.type === "code" ? ( // Handle code blocks
 						<div className='blog-code-block'>
 							{section.heading && (

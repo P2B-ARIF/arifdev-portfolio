@@ -21,9 +21,8 @@ interface GitHubData {
 }
 
 const GitHubCalendarCard = () => {
-	const username = "P2B-ARIF";
-	const token =
-		"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";
+	const username = process.env.GITHUB_USERNAME;
+	const token = process.env.GITHUB_TOKEN;
 	const [contributions, setContributions] = useState(null);
 
 	// console.log(process.env.GITHUB_TOKEN, "tokne");
@@ -61,8 +60,6 @@ const GitHubCalendarCard = () => {
 	useEffect(() => {
 		fetchGitHubData();
 	}, []);
-
-	console.log(contributions, "contributions");
 
 	return (
 		<div className='p-2 text-accent w-full flex flex-col '>

@@ -174,6 +174,7 @@ const Hero = () => {
 							</span>
 							,
 						</motion.span>
+
 						<span className='flex'>
 							<motion.span
 								onMouseEnter={textEnter}
