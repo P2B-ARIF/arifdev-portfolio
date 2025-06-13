@@ -12,8 +12,8 @@ const Footer = () => {
 				}}
 			/>
 
-			<div className='container mx-auto px-5'>
-				<div className='grid grid-cols-1 md:grid-cols-8 gap-3'>
+			<div className='container mx-auto px-5 relative'>
+				<div className='grid grid-cols-1 md:grid-cols-8 gap-3 '>
 					<div className='col-span-6'>
 						<h5 className='font-bold text-xl'>Mohammad Arif</h5>
 						<h6 className='text-highlight'>Full Stack Developer</h6>
@@ -45,7 +45,7 @@ const Footer = () => {
 				</div>
 
 				<div className='font-jaro flex  items-center text-center  font-medium  '>
-					<div className='mx-auto group md:translate-x-16 hover:translate-x-0 text-[6rem] xl:text-[14rem] transition-all duration-300 ease-linear flex'>
+					<div className='mx-auto group md:translate-x-16 hover:translate-x-0 text-[5rem] xl:text-[14rem] transition-all duration-300 ease-linear flex relative'>
 						<span className=' duration-300 ease-linear group-hover:mr-10'>
 							damn
 						</span>
@@ -63,7 +63,7 @@ const Footer = () => {
 
 				<div className='h-[2px] w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent'></div>
 
-				<div className='py-7 flex items-center justify-between text-gray-400'>
+				<div className='py-7 text-sm md:text-base flex items-center justify-between text-gray-400'>
 					<div>© 2025 Mohammad Arif</div>
 					<div>It's not a bug, it's a feature</div>
 				</div>

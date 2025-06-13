@@ -7,7 +7,7 @@ import noise from "@/assets/elements/noise-overlay.351e13a3.png";
 
 const CallToAction = () => {
 	return (
-		<section className=''>
+		<section className='mx-3'>
 			<div className='py-32 relative'>
 				<div
 					className='absolute
@@ -20,7 +20,7 @@ const CallToAction = () => {
     blur-[120px]  mix-blend-screen  -z-1'
 				/>
 
-				<div className='p-10 rounded-3xl border grid grid-cols-[2.5fr_0.5fr_1.5fr] max-w-4xl mx-auto box_gradient'>
+				<div className='p-5 md:p-10 rounded-3xl border grid md:grid-cols-[2.5fr_0.5fr_1.5fr] max-w-4xl mx-auto box_gradient'>
 					<div className='space-y-7'>
 						<div className='flex-shrink-0 inline-flex border border-gray-800 overflow-hidden rounded-full'>
 							<div className='bg-conic/[from_var(--border-angle)] from-primary via-blue-400 to-primary p-px animate-rotate-border from-80% via-90% to-100% rounded-full'>
@@ -33,7 +33,7 @@ const CallToAction = () => {
 								</div>
 							</div>
 						</div>
-						<h1 className='text-5xl font-bold'>
+						<h1 className='text-3xl md:text-4xl lg:text-5xl font-bold'>
 							Book a call, and I'll take care of the rest
 						</h1>
 
@@ -44,7 +44,7 @@ const CallToAction = () => {
 							Let's Discuss Your Idea
 							<CalendarDays size={18} />
 						</Link>
-						<div>
+						<div className='text-sm md:text-base'>
 							mohammadarif4319@gmail.com
 							<button className='ml-5 bg-dark py-1 px-3 text-sm rounded-full'>
 								Copy

@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import thumb from "@/assets/images/image3.jpg";
+import { newBlogPosts } from "@/app/(frontend)/blogs/page";
+import { format } from "date-fns";
 
 export default function BlogSection() {
 	return (
@@ -14,7 +16,7 @@ export default function BlogSection() {
 				</div>
 
 				{/* Header Section */}
-				<div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-12 mt-5'>
+				<div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-12 mt-5 max-md:w-[90%]'>
 					<div>
 						<h2 className='text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-accent to-primary/50 pb-2'>
 							Learning, Building, and
@@ -39,58 +41,62 @@ export default function BlogSection() {
 				{/* Blog Posts */}
 				<div className='space-y-12'>
 					{/* Blog Post 1 */}
-					<div className='flex flex-col md:flex-row gap-6'>
-						<div className='md:w-1/3 lg:w-1/4'>
-							<div className='relative aspect-[4/3] overflow-hidden rounded-lg'>
-								<Image
-									src={thumb}
-									alt='Exit sign with arrow'
-									fill
-									className='object-cover'
-									priority
-								/>
-							</div>
-						</div>
-						<div className='md:w-2/3 lg:w-3/4'>
-							<div className='flex items-center text-sm text-gray-400 mb-2'>
-								<span>December 15, 2024</span>
-								<span className='mx-2'>•</span>
-								<span>5 min read</span>
-							</div>
-							<h3 className='text-xl md:text-2xl font-bold mb-2'>
-								<Link
-									href='/blog/hacky-way-to-customize-shadcns-tooltip-arrows'
-									className='hover:text-gray-300 transition-colors'
-								>
-									Hacky Way to Customize Shadcn's Tooltip Arrows
-								</Link>
-							</h3>
-							<p className='text-gray-400 mb-4'>
-								A workaround for displaying a custom SVG arrow in shadcn's
-								tooltip.
-							</p>
-							<div className='flex items-center justify-between'>
-								<Link
-									href='/blog/hacky-way-to-customize-shadcns-tooltip-arrows'
-									className='inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors'
-								>
-									Read more
-									<ArrowRight className='ml-2 h-4 w-4' />
-								</Link>
-								<div className='flex gap-2'>
-									<span className='px-2 py-1 text-xs rounded bg-zinc-800 text-gray-300'>
-										react
-									</span>
-									<span className='px-2 py-1 text-xs rounded bg-zinc-800 text-gray-300'>
-										css
-									</span>
+					{newBlogPosts?.slice(0, 3).map((post, idx) => {
+						return (
+							<div key={idx} className='flex flex-col md:flex-row gap-6'>
+								<div className='md:w-1/3 lg:w-1/4'>
+									<div className='relative aspect-[4/3] overflow-hidden rounded-lg'>
+										<Image
+											src={post.img}
+											alt='Exit sign with arrow'
+											fill
+											className='object-cover'
+											priority
+										/>
+									</div>
+								</div>
+								<div className='md:w-2/3 lg:w-3/4'>
+									<div className='flex items-center text-sm text-gray-400 mb-2'>
+										<span>
+											{format(new Date(post.createdAt), "MMMM dd, yyyy")}
+										</span>
+										{/* <span>December 15, 2024</span> */}
+										<span className='mx-2'>•</span>
+										<span>{post.readTime} read</span>
+									</div>
+									<h3 className='text-xl md:text-2xl font-bold mb-2'>
+										<Link
+											href={`/blogs/${post?.slug}`}
+											className='hover:text-gray-300 transition-colors'
+										>
+											{post?.title}
+										</Link>
+									</h3>
+									<p className='text-gray-400 mb-4'>{post?.metaDescription}</p>
+									<div className='flex items-center justify-between'>
+										<Link
+											href={`/blogs/${post?.slug}`}
+											className='inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors'
+										>
+											Read more
+											<ArrowRight className='ml-2 h-4 w-4' />
+										</Link>
+										<div className='flex gap-2'>
+											<span className='px-2 py-1 text-xs rounded bg-zinc-800 text-gray-300'>
+												react
+											</span>
+											<span className='px-2 py-1 text-xs rounded bg-zinc-800 text-gray-300'>
+												css
+											</span>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						);
+					})}
 
 					{/* Blog Post 2 */}
-					<div className='flex flex-col md:flex-row gap-6'>
+					{/* <div className='flex flex-col md:flex-row gap-6'>
 						<div className='md:w-1/3 lg:w-1/4'>
 							<div className='relative aspect-[4/3] overflow-hidden rounded-lg'>
 								<Image
@@ -137,10 +143,10 @@ export default function BlogSection() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 
 					{/* Blog Post 3 */}
-					<div className='flex flex-col md:flex-row gap-6'>
+					{/* <div className='flex flex-col md:flex-row gap-6'>
 						<div className='md:w-1/3 lg:w-1/4'>
 							<div className='relative aspect-[4/3] overflow-hidden rounded-lg'>
 								<Image
@@ -184,7 +190,7 @@ export default function BlogSection() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

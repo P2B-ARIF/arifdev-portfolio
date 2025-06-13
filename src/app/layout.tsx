@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 	description:
 		"Arif is a Full Stack Developer specializing in React, Next.js, Node.js & MongoDB. Building scalable and modern web applications.",
 	icons: {
-		icon: "/logo.png", // assuming logo.png is in public folder
+		icon: "/favicon.png",
 	},
 	metadataBase: new URL("https://arifdev.vercel.app"),
 	alternates: {

@@ -126,7 +126,7 @@ const MySkills = () => {
 								</a>
 							</div>
 							<div className='col-span-2 md:col-span-2 '>
-								<div className='gradient_text bg-primary border_style rounded-md h-full w-full flex items-center gap-2 text-sm md:text-base lg:text-lg justify-center font-medium'>
+								<div className='gradient_text bg-primary border_style rounded-md h-full w-full flex items-center gap-1 md:gap-2 text-sm md:text-base lg:text-lg justify-center font-medium'>
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										width='24'
@@ -137,7 +137,7 @@ const MySkills = () => {
 										strokeWidth='2'
 										strokeLinecap='round'
 										strokeLinejoin='round'
-										className='lucide lucide-sparkles-icon lucide-sparkles text-blue-200 '
+										className='lucide lucide-sparkles-icon lucide-sparkles text-blue-200'
 									>
 										<path d='M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z' />
 										<path d='M20 3v4' />
@@ -179,11 +179,17 @@ const MySkills = () => {
 							<div className='border_style'>
 								<div className='bg-primary border_style rounded-md h-full w-full space-y-2 flex flex-col justify-between'>
 									<h6 className='text-sm ml-1'>Ready for Impact?</h6>
-									<div className='w-full bg-gray-800/50 border-gray-700 flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+									<a
+										href={"/full_stack_developer.pdf"}
+										target='_blank'
+										rel='noopener noreferrer'
+										download={"full_stack_developer.pdf"}
+										className='w-full bg-gray-800/50 border-gray-700 flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'
+									>
 										<FaFileUpload size={18} />
 										<span className='hidden md:block'>Download Resume</span>
 										<span className='md:hidden'> Download CV</span>
-									</div>
+									</a>
 								</div>
 							</div>
 						</div>
