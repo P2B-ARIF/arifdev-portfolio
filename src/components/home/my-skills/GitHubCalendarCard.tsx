@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { request, gql } from "graphql-request";
+import { Activity } from "lucide-react";
 
-// --- 1. Define Types for GraphQL Response ---
 interface ContributionCalendar {
 	totalContributions: number;
 }
@@ -21,11 +21,11 @@ interface GitHubData {
 }
 
 const GitHubCalendarCard = () => {
-	const username = process.env.GITHUB_USERNAME;
-	const token = process.env.GITHUB_TOKEN;
+	const username = process.env.GITHUB_USERNAME || "P2B-ARIF";
+	const token =
+		process.env.GITHUB_TOKEN ||
+		"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";
 	const [contributions, setContributions] = useState(null);
-
-	// console.log(process.env.GITHUB_TOKEN, "tokne");
 
 	const fetchGitHubData = async () => {
 		const endpoint = "https://api.github.com/graphql";
@@ -64,26 +64,25 @@ const GitHubCalendarCard = () => {
 	return (
 		<div className='p-2 text-accent w-full flex flex-col '>
 			<div className='flex justify-between items-center mb-4 h-full'>
-				<h2 className=' text-lg font-semibold flex items-center gap-2'>
-					<svg height='20' width='20' viewBox='0 0 16 16' fill='currentColor'>
-						<path d='M8 0C3.58 0 0 3.58 0 8c0 3.54...' />
-					</svg>
+				<h2 className=' md:text-lg font-semibold flex items-center gap-2'>
+					<Activity size={18} />
 					GitHub activity
 				</h2>
-				<span className='text-sm text-gray-400'>
-					{contributions} contributions in the last year
+				<span className='text-xs md:text-sm text-right ml-auto w-1/2 md:w-2/3 text-gray-400'>
+					The Pulse of My Development: Real-Time Insights from GitHub Daily
+					Coding Contributions
 				</span>
 			</div>
 			<div className='overflow-x-auto'>
 				<GitHubCalendar
 					username={username}
-					blockSize={11}
+					blockSize={10.9}
 					blockMargin={2}
 					colorScheme='dark'
 					fontSize={14}
 				/>
 			</div>
-			<div className='text-base items-end justify-self-end text-gray-400 mt-10'>
+			<div className='text-base items-end justify-self-end text-gray-400 mt-2 md:mt-10'>
 				Last pushed on{" "}
 				{new Date().toLocaleDateString(undefined, {
 					weekday: "long",

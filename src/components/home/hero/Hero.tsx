@@ -13,6 +13,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { config } from "@/utils/constants";
 
 interface MousePosition {
 	x: number;
@@ -107,25 +108,13 @@ const Hero = () => {
 
 			<div className='absolute bottom-20 md:bottom-0 right-0 md:right-20 flex flex-col items-center gap-10'>
 				<div className='md:hidden relative flex flex-col mb-5 items-center gap-4 mt-3 max-md:justify-center'>
-					<a
-						href='https://www.facebook.com/mohammad.arif280'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
+					<a href={config.facebook} target='_blank' rel='noopener noreferrer'>
 						<Facebook size={18} />
 					</a>
-					<a
-						href='https://www.instagram.com/mohammad.arif280'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
+					<a href={config.instagram} target='_blank' rel='noopener noreferrer'>
 						<Instagram size={18} />
 					</a>
-					<a
-						href='https://www.linkedin.com/in/mdarif319/'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
+					<a href={config.linkedin} target='_blank' rel='noopener noreferrer'>
 						<Linkedin size={18} />
 					</a>
 				</div>

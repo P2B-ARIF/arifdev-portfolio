@@ -73,7 +73,7 @@ const WorkCategories = () => {
 
 	return (
 		<section ref={targetRef} className='h-[300vh] pb-10'>
-			<div className='sticky pt-32 top-0 h-[60vh] md:min-h-screen flex flex-col justify-start'>
+			<div className='sticky pt-32 top-0 h-[80vh] md:min-h-screen flex flex-col justify-start'>
 				<div className='relative flex-1 flex items-center overflow-hidden'>
 					<motion.div
 						style={{ x }}
@@ -84,7 +84,7 @@ const WorkCategories = () => {
 						}}
 						className='flex gap-6 xl:gap-10 px-[10vw]'
 					>
-						<div className='w-[400px] 2xl:w-[450px] flex-shrink-0 bg-gray overflow-hidden p-5 md:p-8 text-accent items-center h-full mt-5'>
+						<div className='w-[300px] lg:w-[400px] 2xl:w-[450px] flex-shrink-0 bg-gray overflow-hidden p-5 md:p-8 text-accent items-center h-full mt-5'>
 							<h1 className='text-4xl md:text-5xl font-semibold leading-[1.2] sm:leading-9 md:leading-[46px] 2xl:leading-[55px] font-secondary text-transparent bg-clip-text bg-gradient-to-br from-accent to-primary/50'>
 								We let our work speak for itself.
 							</h1>

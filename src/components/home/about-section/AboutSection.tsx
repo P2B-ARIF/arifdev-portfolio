@@ -4,15 +4,19 @@ import React, { useEffect, useRef, useState } from "react";
 import { FileDown, Sparkles, Telescope } from "lucide-react";
 import Image from "next/image";
 import img from "@/assets/images/image1.jpg";
+import img1 from "@/assets/images/picture1.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 const AboutSection = () => {
 	const containRef = useRef(null);
 	const [isMobile, setIsMobile] = useState(false);
+	const [laptop, setLaptop] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth < 768);
+			setLaptop(window.innerWidth >= 768 && window.innerWidth < 1024);
 		};
 		handleResize();
 		window.addEventListener("resize", handleResize);
@@ -27,7 +31,6 @@ const AboutSection = () => {
 	const y = useTransform(
 		scrollYProgress,
 		[0, 1],
-
 		isMobile ? ["150px", "-20px"] : ["200px", "-100px"],
 	);
 	const text = useTransform(
@@ -42,7 +45,7 @@ const AboutSection = () => {
 			className='py-32 max-w-screen-xl 2xl:max-w-screen-2xl container mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-16 px-5'
 		>
 			<div>
-				<h1 className='text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold uppercase'>
+				<h1 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold uppercase'>
 					Ambitious build? Delivered with precision and speed.
 				</h1>
 
@@ -51,7 +54,7 @@ const AboutSection = () => {
 					className='w-full self-end mr-auto justify-end flex h-[380px] rounded-md overflow-hidden mt-10 '
 				>
 					<Image
-						src={img}
+						src={img1}
 						width={400}
 						height={400}
 						alt='Picture of the author'
@@ -66,10 +69,6 @@ const AboutSection = () => {
 				</div>
 
 				<h5 className='text-lg mt-10 text-gray-400'>
-					{/* I'm a <span className='text-highlight'>junior web developer</span> and
-					I have a lot of knowledge, every day I'm pushing my learning skills.
-					Adaptable quickly, and organized well. Interested in learning the
-					latest web & software technologies quickly. */}
 					Hello!{" "}
 					<span className='text-highlight'>
 						I’m Arif, a Full Stack Web Developer
@@ -101,15 +100,24 @@ const AboutSection = () => {
 				</h4>
 
 				<div className='flex items-center gap-2 md:gap-4'>
-					<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+					<a
+						href={"/full_stack_developer.pdf"}
+						target='_blank'
+						rel='noopener noreferrer'
+						download={"full_stack_developer.pdf"}
+						className='cursor-pointer bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'
+					>
 						<FileDown size={18} />
 						Download <span className={"md:hidden"}>CV</span>
 						<span className='max-md:hidden'>Resume</span>
-					</div>
-					<div className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'>
+					</a>
+					<Link
+						href='/about-me'
+						className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'
+					>
 						<Telescope size={18} />
-						Explore About me
-					</div>
+						Explore <span className={"md:block hidden"}>About</span> me
+					</Link>
 				</div>
 			</motion.div>
 		</div>
