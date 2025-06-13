@@ -31,6 +31,7 @@ const MySkills = () => {
 			<div className='md:grid md:grid-cols-12 md:grid-rows-7 gap-4 h-full w-full'>
 				<div className='md:col-span-7 md:row-span-7 grid md:grid-cols-7 md:grid-rows-7 gap-3 max-md:mb-3'>
 					<div className='col-span-7 row-span-3 grid md:grid-cols-7 gap-3'>
+						{/* location */}
 						<div className='col-span-4 rounded-lg overflow-hidden  relative border border-gray-600 p-2 bg-slate-500/20 backdrop-blur-lg h-[300px] 2xl:h-[400px]'>
 							<div className='rounded-md overflow-hidden h-full'>
 								<div className='absolute top-4 left-4 z-10 bg-zinc-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center'>
