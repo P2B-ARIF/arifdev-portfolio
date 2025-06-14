@@ -1,7 +1,16 @@
 "use client";
 import React, { useEffect } from "react";
 
-const SkillIcon = ({ skillsObj, idx }) => {
+interface Skill {
+	label: string;
+	icon: string | any;
+}
+interface Props {
+	skillsObj: Skill[];
+	idx: number;
+}
+
+const SkillIcon = ({ skillsObj, idx }: Props) => {
 	const cols = 6;
 	const mdCols = 10;
 

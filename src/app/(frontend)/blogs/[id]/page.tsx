@@ -315,7 +315,7 @@ const BlogPostPage = () => {
 			</div>
 
 			{/* Loop through sections and render content or images */}
-			{post.sections.map((section, index) => (
+			{post.sections.map((section: any, index: number) => (
 				<div key={index} className='blog-section'>
 					{section.type === "image" ? (
 						<figure className='blog-image-container'>

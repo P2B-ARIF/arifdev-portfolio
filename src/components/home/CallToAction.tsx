@@ -53,10 +53,8 @@ const CallToAction = () => {
 					</div>
 					<div></div>
 					<div className='w-full h-full'>
-						<Image
-							width={1500}
-							height={1500}
-							src={sideImage}
+						<img
+							src={sideImage.src}
 							alt=''
 							className='w-full h-full object-contain'
 						/>

@@ -28,7 +28,7 @@ const Navbar = () => {
 	const { scrollY } = useScroll();
 
 	useMotionValueEvent(scrollY, "change", latest => {
-		const previous = scrollY.getPrevious();
+		const previous: any = scrollY.getPrevious();
 
 		// navbar background toggle
 		setIsScrolled(latest > 80);
@@ -56,7 +56,7 @@ const Navbar = () => {
 				<div className='flex items-center justify-between container mx-auto px-5 py-6 md:px-0'>
 					<Link href='/' className='font-semibold uppercase text-2xl'>
 						<Image
-							src='/logo.png'
+							src='/favicon.png'
 							alt='logo'
 							className='w-[40px] md:w-[50px] aspect-square object-contain'
 							width={50}

@@ -126,7 +126,7 @@ const Hero = () => {
 			<div className='absolute md:hidden top-5 right-0 px-5 justify-between flex items-center gap-4 w-full'>
 				<Link href='/' className='font-semibold uppercase text-2xl'>
 					<Image
-						src='/logo.png'
+						src='/favicon.png'
 						alt='logo'
 						className='w-[40px] aspect-square object-contain'
 						width={50}

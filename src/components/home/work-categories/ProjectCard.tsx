@@ -1,29 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ColorThief from "color-thief-browser";
 import Image from "next/image";
 
-const ProjectCard = ({ project }: any) => {
+interface Project {
+	id: number;
+	title: string;
+	imageUrl: string | any;
+	description?: string;
+	keywords?: string[];
+}
+
+const ProjectCard = ({ project }: { project: Project }) => {
 	const imgRef = useRef<HTMLImageElement>(null);
 	const [bgColor, setBgColor] = useState<string>("#f3f3f3");
 
 	useEffect(() => {
 		const img = imgRef.current;
+		const colorThief = ColorThief; // Changed this line
 
 		const extractColor = () => {
 			if (!img) return;
-			const colorThief = new ColorThief();
-			setTimeout(() => {
-				try {
-					const color = colorThief.getColor(img);
-					setBgColor(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.8)`);
-				} catch (error) {
-					console.error("Color extraction failed:", error);
-				}
-			}, 100);
+
+			try {
+				const color = colorThief.getColor(img);
+				setBgColor(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.8)`);
+			} catch (error) {
+				console.error("Color extraction failed:", error);
+			}
 		};
 
 		if (img?.complete) {
@@ -33,6 +39,32 @@ const ProjectCard = ({ project }: any) => {
 			return () => img?.removeEventListener("load", extractColor);
 		}
 	}, []);
+	// const imgRef = useRef<HTMLImageElement>(null);
+	// const [bgColor, setBgColor] = useState<string>("#f3f3f3");
+
+	// useEffect(() => {
+	// 	const img = imgRef.current;
+
+	// 	const extractColor = () => {
+	// 		if (!img) return;
+	// 		const colorThief = new ColorThief();
+	// 		setTimeout(() => {
+	// 			try {
+	// 				const color = colorThief.getColor(img);
+	// 				setBgColor(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.8)`);
+	// 			} catch (error) {
+	// 				console.error("Color extraction failed:", error);
+	// 			}
+	// 		}, 100);
+	// 	};
+
+	// 	if (img?.complete) {
+	// 		extractColor();
+	// 	} else {
+	// 		img?.addEventListener("load", extractColor);
+	// 		return () => img?.removeEventListener("load", extractColor);
+	// 	}
+	// }, []);
 
 	return (
 		<motion.div
