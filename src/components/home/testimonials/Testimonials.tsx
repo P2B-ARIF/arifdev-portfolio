@@ -100,10 +100,10 @@ export default function Testimonials() {
 					<div className='overflow-hidden' ref={emblaRef}>
 						<div className='flex'>
 							{testimonials.map((testimonial, index) => (
-								<div key={index} className='flex-[0_0_100%] min-w-0'>
+								<div key={index} className='flex-[0_0_100%] '>
 									<div className='text-center px-4'>
 										<blockquote className='mb-12'>
-											<p className='text-2xl md:text-3xl lg:text-4xl font-serif leading-tight'>
+											<p className='text-2xl md:text-3xl 2xl:text-4xl font-serif leading-tight md:w-[80%] mx-auto'>
 												"{testimonial.quote}"
 											</p>
 										</blockquote>

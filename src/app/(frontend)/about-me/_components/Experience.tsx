@@ -10,8 +10,6 @@ const Experience = () => {
 			setShow(true);
 			const newTiming = Math.round(Math.random() * 5000 + Math.random() * 1000);
 			setTiming(newTiming);
-
-			// নতুন delay অনুযায়ী আবার timeout set
 			setTimeout(trigger, newTiming);
 		};
 
@@ -20,7 +18,6 @@ const Experience = () => {
 		return () => clearTimeout(initialTimeout);
 	}, []);
 
-	// lightning effect বন্ধ করার জন্য timeout
 	useEffect(() => {
 		let timer: NodeJS.Timeout;
 		if (show) {
@@ -30,8 +27,6 @@ const Experience = () => {
 		}
 		return () => clearTimeout(timer);
 	}, [show]);
-
-	console.log(show, timing, "show");
 
 	return (
 		<div className='container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 py-16 px-5'>
@@ -46,11 +41,11 @@ const Experience = () => {
 
 				<div className='flex items-center justify-around'>
 					<div className='text-2xl'>
-						<h1 className='text-7xl font-semibold text-highlight pb-2'>7+</h1>{" "}
+						<h1 className='text-7xl font-semibold text-highlight pb-2'>3+</h1>{" "}
 						Years of <br /> Experience
 					</div>
 					<div className='text-2xl'>
-						<h1 className='text-7xl font-semibold text-highlight pb-2'>22+</h1>{" "}
+						<h1 className='text-7xl font-semibold text-highlight pb-2'>32+</h1>{" "}
 						Projects <br /> Completed
 					</div>
 				</div>
@@ -58,31 +53,34 @@ const Experience = () => {
 			<div className='col-span-2'>
 				<h1 className='text-3xl text-highlight font-medium mb-8'>Experience</h1>
 				<h3 className='text-lg'>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
-					assumenda corrupti exercitationem excepturi neque dolore rem, delectus
-					cum quam dicta! Lorem, ipsum dolor sit amet consectetur adipisicing
-					elit. Nihil, consectetur. Lorem ipsum dolor sit amet consectetur,
-					adipisicing elit. Esse eaque maiores molestias rerum? Non aut
-					accusantium aliquam vitae incidunt et.
+					Hi, I'm Mohammad Arif, a dedicated Full-Stack Developer with a proven
+					track record of building dynamic and user-friendly web applications. I
+					bring together expertise in modern frontend frameworks and powerful
+					backend technologies to deliver complete, scalable, and high-quality
+					digital products.
+					<br />
+					<br />
+					Let's collaborate to build something truly exceptional that delivers
+					real value and makes a difference.
 				</h3>
 
 				<div className='mt-10 space-y-5'>
 					<div className='px-10 py-6 rounded-xl flex items-center justify-between border border-gray-700'>
 						<div>
-							<h1>2020 - Present</h1>
+							<h1>2025 - Present</h1>
 						</div>
 						<div className='space-y-1'>
-							<h3 className='text-lg'>Designflow Agency</h3>
-							<h6 className='text-gray-500'>Founder, Lead Designer</h6>
+							<h3 className='text-lg'>Skillers Zone</h3>
+							<h6 className='text-gray-500'>Full-Stack Developer</h6>
 						</div>
 					</div>
 					<div className='px-10 py-6 rounded-xl flex items-center justify-between border border-gray-700'>
 						<div>
-							<h1>2020 - Present</h1>
+							<h1>2022 - 2024</h1>
 						</div>
 						<div className='space-y-1'>
-							<h3 className='text-lg'>Designflow Agency</h3>
-							<h6 className='text-gray-500'>Founder, Lead Designer</h6>
+							<h3 className='text-lg'>Digital Impact</h3>
+							<h6 className='text-gray-500'>Full-Stack Developer</h6>
 						</div>
 					</div>
 				</div>

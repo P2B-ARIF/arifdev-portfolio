@@ -534,12 +534,12 @@ const page = () => {
 	// const regularPosts = blogPosts.filter(post => !post.featured);
 
 	return (
-		<section className='min-h-screen pt-32'>
+		<section className='min-h-screen md:pt-32 mx-5'>
 			<div className='container mx-auto'>
-				<div className='grid grid-cols-12 gap-5 relative'>
+				<div className='max-md:hidden md:grid md:grid-cols-12 gap-5 relative max-md:space-y-5'>
 					{/* 1st column */}
 
-					<div className='col-span-7 grid grid-rows-12 gap-5'>
+					<div className=' col-span-7 md:grid grid-rows-12 gap-5 max-md:space-y-5'>
 						{newBlogPosts?.slice(0, 1)?.map((post, idx) => {
 							return (
 								<div
@@ -550,7 +550,7 @@ const page = () => {
 										backgroundRepeat: "no-repeat",
 										backgroundPosition: "center",
 									}}
-									className='row-span-8 rounded-lg overflow-hidden flex items-end p-5 bg-gradient-to-t from-primary/30 to-transparent relative  border border-gray-600'
+									className='max-md:h-[300px] row-span-5 md:row-span-8 rounded-lg overflow-hidden flex items-end p-5 bg-gradient-to-t from-primary/30 to-transparent relative  border border-gray-600'
 								>
 									<div className='bg-gradient-to-t from-primary/50 to-transparent bg-primary/20 absolute bottom-0 left-0  w-full h-full from-20%'></div>
 									<div className='relative space-y-1 md:w-3/4'>
@@ -558,7 +558,13 @@ const page = () => {
 										<p className='text-xs md:text-sm'>
 											{post?.metaDescription}
 										</p>
-										<Link href={`/blogs/${post?.slug}`}>Read More</Link>
+										<Link
+											href={`/blogs/${post?.slug}`}
+											className='inline-flex items-center text-blue-400 hover:text-blue-500 text-sm transition-colors'
+										>
+											Read more
+											<ArrowRight className='ml-2 h-4 w-4' />
+										</Link>
 									</div>
 								</div>
 							);
@@ -567,10 +573,14 @@ const page = () => {
 							return (
 								<div
 									key={idx}
-									className='row-span-4 rounded-lg overflow-hidden  grid grid-cols-3 border border-gray-600'
+									className='row-span-4 rounded-lg overflow-hidden md:grid md:grid-cols-3 border border-gray-600'
 								>
-									<div>
-										<img src={post?.img} alt='' className='w-full h-full' />
+									<div className='max-md:h-[250px]'>
+										<img
+											src={post?.img}
+											alt=''
+											className='w-full h-full object-cover'
+										/>
 									</div>
 									<div className='col-span-2 p-3'>
 										<div className='flex items-center text-gray-400 text-xs'>
@@ -583,7 +593,7 @@ const page = () => {
 										</div>
 										<h3 className='font-medium'>
 											<Link
-												href='/blogs/hacky-way-to-customize-shadcns-tooltip-arrows'
+												href={`/blogs/${post?.slug}`}
 												className='hover:text-gray-300 transition-colors'
 											>
 												{post.title}
@@ -675,7 +685,7 @@ const page = () => {
 						<span className='text-sm font-medium'>Blog & Articles</span>
 					</div>
 
-					<p className='text-lg my-5 mb-10 max-w-lg text-gray-400 leading-relaxed'>
+					<p className='md:text-lg my-5 mb-10 max-w-lg text-gray-400 leading-relaxed'>
 						Thoughts, tutorials, and insights about web development, design, and
 						technology. Stay updated with the latest trends and best practices.
 					</p>
@@ -691,7 +701,7 @@ const page = () => {
 						))}
 					</div> */}
 
-					<div className='grid grid-cols-7 gap-10'>
+					<div className='grid max-md:flex max-md:flex-wrap-reverse md:grid-cols-7 gap-10'>
 						{/* Blog Posts */}
 						{/* <HorizontalBlogCard post={blogPosts[0]} thumb={thumb}  /> */}
 
