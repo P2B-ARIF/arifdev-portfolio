@@ -10,31 +10,33 @@ export default function FAQSection() {
 
 	const faqItems = [
 		{
-			question: "What services does SkillersZone offer?",
+			question:
+				"What technologies do you specialize in for frontend development?",
 			answer:
-				"SkillersZone offers a range of digital services including web development, mobile app development, UI/UX design, digital marketing, and system integration solutions tailored to your business needs.",
-		},
-		{
-			question: "Is SkillersZone suitable for startups and small businesses?",
-			answer:
-				"Yes, SkillersZone works with businesses of all sizes. We offer scalable solutions that can be tailored to meet the specific needs and budgets of startups and small businesses while allowing room for growth.",
-		},
-		{
-			question: "What is the process of working with SkillersZone?",
-			answer:
-				"At SkillersZone, our process is simple and results-driven. We begin with a detailed consultation to understand your needs, followed by strategic planning to craft the best solution. Our team then implements and optimizes the solution, ensuring seamless execution.",
+				"I specialize in modern frontend technologies including React.js, Next.js, TypeScript, and responsive design with HTML5/CSS3. I focus on building intuitive, high-performance user interfaces that work seamlessly across all devices.",
 		},
 		{
 			question:
-				"Can you help with software development and system integration?",
+				"Can you handle both backend and database development for my project?",
 			answer:
-				"Yes, we specialize in custom software development and system integration. Our team of experienced developers can create tailored solutions that integrate seamlessly with your existing systems and workflows.",
+				"Absolutely! I provide end-to-end backend solutions using Node.js, Express.js, and Python (Django/Flask), along with database design for MongoDB, PostgreSQL, or MySQL. I ensure secure, scalable APIs and optimized data management tailored to your needs.",
+		},
+		{
+			question: "Do you build complete full-stack applications from scratch?",
+			answer:
+				"Yes! I develop custom full-stack web applications using the MERN/MEVN stack (or other preferred frameworks). From UI design to server logic and deployment, I deliver comprehensive solutions with clean code and agile methodologies.",
 		},
 		{
 			question:
-				"What makes SkillersZone different from other digital service providers?",
+				"How do you ensure performance and scalability for deployed applications?",
 			answer:
-				"SkillersZone stands out through our client-centric approach, technical expertise, and commitment to delivering measurable results. We focus on building long-term partnerships rather than one-off projects.",
+				"I optimize performance through code efficiency, caching strategies, and modern deployment tools like Vercel, Docker, or AWS. Every project follows security best practices and CI/CD pipelines for reliability and scalability",
+		},
+		{
+			question:
+				"Can you work with startups or existing businesses to improve their platforms?",
+			answer:
+				"Definitely. Whether you're launching a new product or optimizing an existing platform, I collaborate closely to align with your goals. My focus is on clean code, user experience, and measurable results—let’s discuss how I can add value to your project!",
 		},
 	];
 

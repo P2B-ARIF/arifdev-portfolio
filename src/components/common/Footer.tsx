@@ -46,14 +46,14 @@ const Footer = () => {
 
 				<div className='font-jaro flex  items-center text-center  font-medium  '>
 					<div className='mx-auto group md:translate-x-16 hover:translate-x-0 text-[5rem] xl:text-[14rem] transition-all duration-300 ease-linear flex relative'>
-						<span className=' duration-300 ease-linear group-hover:mr-10'>
+						<span className=' duration-300 ease-linear group-hover:mr-4 md:group-hover:mr-10'>
 							damn
 						</span>
 						<span className=''>it</span>
 						<span className='w-0 translate-y-[50px]  opacity-0 duration-300 ease-out group-hover:w-5 group-hover:translate-y-0 group-hover:opacity-100'>
 							,
 						</span>
-						<span className='inline-flex w-0 delay-75 duration-200 ease-in group-hover:w-20'></span>
+						<span className='inline-flex w-0 delay-75 duration-200 ease-in group-hover:w-4 md:group-hover:w-20'></span>
 						<span className=' duration-300 ease-linear'>arif</span>
 						<span className='translate-y-[30px]  opacity-0 duration-200 ease-linear group-hover:translate-y-0 group-hover:opacity-100'>
 							!!

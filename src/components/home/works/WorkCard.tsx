@@ -54,12 +54,7 @@ const WorkCard = ({ idx, list, range, targetScale, progress }: any) => {
 			<div className='bg-zinc-100 text-black h-[90vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden  relative'>
 				<div className='col-span-1 p-5 md:p-10'>
 					<div className='flex items-center justify-between'>
-						<motion.h1
-							// style={{
-							// 	y: titleY,
-							// }}
-							className='text-3xl md:text-4xl font-semibold'
-						>
+						<motion.h1 className='text-3xl md:text-4xl font-semibold'>
 							{idx + 1} Oscar Project <span className='text-2xl'>- 2023</span>
 						</motion.h1>
 						<div className='absolute top-5 md:top-10 right-5 md:left-[35%] w-10 h-10 bg-zinc-900 rounded-full flex items-center justify-center text-white'>

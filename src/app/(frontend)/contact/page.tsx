@@ -31,6 +31,8 @@ import img3 from "@/assets/images/image3.jpg";
 import img4 from "@/assets/images/image4.jpg";
 import img5 from "@/assets/images/image5.jpg";
 import img6 from "@/assets/images/image6.jpg";
+
+import wp_profile from "@/assets/images/picture1.jpg";
 import FAQSection from "@/components/home/FAQSection";
 
 const Contact = () => {
@@ -73,7 +75,7 @@ const Contact = () => {
 								}}
 							/>
 						</div>
-						<h1 className='text-4xl font-bold mt-5 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600'>
+						<h1 className='gradient_text text-4xl font-bold mt-5 '>
 							Let's have a chat!
 						</h1>
 						<p className='text-gray-400 max-w-md mx-auto'>
@@ -91,21 +93,21 @@ const Contact = () => {
 						>
 							<div className='flex items-center justify-between gap-5'>
 								<div className='flex items-center gap-3'>
-									<div className='bg-purple-900/50 border border-purple-700/50 p-2 rounded-lg text-purple-400'>
+									<div className='bg-green-900/50 border border-green-700/50 p-2 rounded-lg text-green-400'>
 										<FaWhatsapp size={20} />
 									</div>
 									<span className='font-medium text-gray-200'>WhatsApp</span>
 								</div>
 								<a
 									href='https://wa.me/8801953424319'
-									className='p-2 rounded-full bg-purple-900/30 hover:bg-purple-800/50 transition-colors duration-200 text-purple-400'
+									className='p-2 rounded-full bg-green-900/30 hover:bg-green-800/50 transition-colors duration-200 text-green-400'
 								>
 									<ArrowUpRight size={18} />
 								</a>
 							</div>
 							<div className='flex items-center gap-3 mt-5'>
 								<img
-									src={img.src || "/placeholder.svg"}
+									src={wp_profile.src || "/placeholder.svg"}
 									alt='Profile'
 									className='w-8 h-8 rounded-full object-cover border-2 border-purple-600/30'
 								/>
@@ -121,31 +123,31 @@ const Contact = () => {
 						<motion.div
 							whileHover={{ scale: 1.03 }}
 							transition={{ type: "spring", stiffness: 400, damping: 10 }}
-							className='p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 shadow-lg hover:shadow-pink-900/20'
+							className='p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 shadow-lg hover:shadow-blue-900/20'
 						>
 							<div className='flex items-center justify-between gap-5'>
 								<div className='flex items-center gap-3'>
-									<div className='bg-pink-900/50 border border-pink-700/50 p-2 rounded-lg text-pink-400'>
+									<div className='bg-blue-900/50 border border-blue-700/50 p-2 rounded-lg text-blue-400'>
 										<Linkedin size={20} />
 									</div>
 									<span className='font-medium text-gray-200'>LinkedIn</span>
 								</div>
 								<a
 									href='https://www.linkedin.com/in/mdarif319/'
-									className='p-2 rounded-full bg-pink-900/30 hover:bg-pink-800/50 transition-colors duration-200 text-pink-400'
+									className='p-2 rounded-full bg-blue-900/30 hover:bg-blue-800/50 transition-colors duration-200 text-blue-400'
 								>
 									<ArrowUpRight size={18} />
 								</a>
 							</div>
 							<div className='flex items-center gap-3 mt-5'>
 								<img
-									src={img.src || "/placeholder.svg"}
+									src={wp_profile.src || "/placeholder.svg"}
 									alt='Profile'
-									className='w-8 h-8 rounded-full object-cover border-2 border-pink-600/30'
+									className='w-8 h-8 rounded-full object-cover border-2 border-blue-600/30'
 								/>
 								<a
 									href='https://www.linkedin.com/in/mdarif319/'
-									className='text-gray-400 hover:text-pink-400 transition-colors duration-200'
+									className='text-gray-400 hover:text-blue-400 transition-colors duration-200'
 								>
 									linkedin.com/in/mdarif319/
 								</a>
@@ -161,7 +163,7 @@ const Contact = () => {
 						className='w-full max-w-2xl p-8 rounded-xl box_gradient shadow-xl'
 					>
 						<div className='flex items-center gap-3 mb-6'>
-							<div className='p-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white'>
+							<div className='p-2 rounded-lg bg-gray-700 text-white'>
 								<MessageSquare size={20} />
 							</div>
 							<h2 className='text-xl font-semibold text-white'>
@@ -181,7 +183,7 @@ const Contact = () => {
 									type='text'
 									id='name'
 									placeholder='Enter your name'
-									className='bg-gray-800/50 border-gray-700 focus:border-purple-500 focus:ring-purple-500/20'
+									className='bg-gray-800/50 border-gray-700 focus:border-accent/50 focus:ring-accent/10'
 								/>
 							</div>
 
@@ -196,7 +198,7 @@ const Contact = () => {
 									type='email'
 									id='email'
 									placeholder='Enter your email'
-									className='bg-gray-800/50 border-gray-700 focus:border-purple-500 focus:ring-purple-500/20'
+									className='bg-gray-800/50 border-gray-700 focus:border-accent/50 focus:ring-accent/10'
 								/>
 							</div>
 
@@ -208,10 +210,10 @@ const Contact = () => {
 									What's your budget?
 								</label>
 								<Select>
-									<SelectTrigger className='bg-gray-800/50 border-gray-700 focus:ring-purple-500/20 w-full'>
+									<SelectTrigger className='bg-gray-800/50 border-gray-700  w-full'>
 										<SelectValue placeholder='Select your budget' />
 									</SelectTrigger>
-									<SelectContent className='!bg-gray-800 border-gray-700 !hover:bg-gray-800'>
+									<SelectContent className='!bg-gray-800 border-gray-700 !hover:bg-gray-800 '>
 										<SelectItem value='less-than-1k'>
 											Less than $1,000
 										</SelectItem>
@@ -236,12 +238,12 @@ const Contact = () => {
 									id='message'
 									placeholder='Enter your message...'
 									rows={10}
-									className='bg-gray-800/50 border-gray-700 focus:border-purple-500 focus:ring-purple-500/20 resize-none min-h-40'
+									className='bg-gray-800/50 border-gray-700 focus:border-accent/50 focus:ring-accent/10 resize-none min-h-40'
 								/>
 							</div>
 
 							<div className='col-span-2'>
-								<Button className='w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium py-6'>
+								<Button className='w-full bg-primary hover:bg-primary/70 text-white font-medium py-6'>
 									<Send size={18} className='mr-2' /> Send Your Message
 								</Button>
 							</div>
@@ -260,15 +262,15 @@ const Contact = () => {
 						transition={{ duration: 0.5, delay: 0.4 }}
 						className='flex flex-col gap-6 text-center items-center'
 					>
-						<h2 className='text-4xl font-light bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600'>
+						<h2 className='text-4xl font-light font-secondary text-transparent bg-clip-text bg-gradient-to-br from-accent to-primary/50'>
 							Life beyond work
 						</h2>
-						<Button
-							variant='outline'
-							className='flex items-center gap-2 hover:text-pink-400 border-gray-700 hover:border-pink-500/50 transition-all duration-300'
+						<a
+							href=''
+							className='border rounded-lg p-1.5 text-sm px-3 flex items-center gap-2 hover:text-pink-400 border-gray-700 hover:border-pink-500/50 transition-all duration-300'
 						>
 							<Instagram size={18} /> Follow me
-						</Button>
+						</a>
 					</motion.div>
 				</motion.div>
 				{/* Image Gallery */}

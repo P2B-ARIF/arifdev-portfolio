@@ -7,8 +7,8 @@ import noise from "@/assets/elements/noise-overlay.351e13a3.png";
 
 const CallToAction = () => {
 	return (
-		<section className='mx-3'>
-			<div className='py-32 relative'>
+		<section className='px-3 '>
+			<div className='py-32 relative overflow-x-clip'>
 				<div
 					className='absolute
     bottom-[-100px] right-[0px]    w-[600px] h-[600px]    bg-[radial-gradient(circle,_rgba(80,227,194,0.4)_0%,_transparent_70%)]    rounded-full

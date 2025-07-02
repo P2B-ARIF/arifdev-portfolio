@@ -141,14 +141,15 @@ export default function Testimonials() {
 
 					{/* Navigation Arrows */}
 					<button
-						className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-0 bg-zinc-800 hover:bg-zinc-700 transition-colors w-10 h-10 rounded-full flex items-center justify-center focus:outline-none text-highlight'
+						className='absolute left-4 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-0 bg-zinc-800 hover:bg-zinc-700 transition-colors w-10 h-10 rounded-full flex items-center justify-center focus:outline-none text-highlight'
 						onClick={scrollPrev}
 						aria-label='Previous testimonial'
 					>
+						ver
 						<ChevronLeft className='w-6 h-6' />
 					</button>
 					<button
-						className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 bg-zinc-800 hover:bg-zinc-700 transition-colors w-10 h-10 rounded-full flex items-center justify-center focus:outline-none text-highlight'
+						className='absolute right-4 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 bg-zinc-800 hover:bg-zinc-700 transition-colors w-10 h-10 rounded-full flex items-center justify-center focus:outline-none text-highlight'
 						onClick={scrollNext}
 						aria-label='Next testimonial'
 					>

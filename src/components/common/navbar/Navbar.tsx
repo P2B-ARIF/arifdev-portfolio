@@ -10,7 +10,7 @@ import { Home, User, LayoutGrid, FileText, Handshake } from "lucide-react";
 const navLinks = [
 	{ id: 1, href: "/", label: "Home", icon: Home },
 	{ id: 2, href: "/about-me", label: "About Me", icon: User },
-	{ id: 4, href: "/works", label: "Works", icon: LayoutGrid },
+	// { id: 4, href: "/works", label: "Works", icon: LayoutGrid },
 	{
 		id: 3,
 		href: "/projects-gallery",
