@@ -100,7 +100,7 @@ const WorkCategories = () => {
 	const targetRef = useRef(null);
 	const { mobile, tablet, laptop, desktop } = useResponsive();
 
-	const { scrollYProgress, scrollXProgress } = useScroll({
+	const { scrollYProgress } = useScroll({
 		target: targetRef,
 		offset: ["start start", "end end"],
 	});
@@ -147,7 +147,7 @@ const WorkCategories = () => {
 							</div>
 						</div>
 
-						{categories.map(category => (
+						{categories?.map(category => (
 							<ProjectCard key={category.id} project={category} />
 						))}
 					</motion.div>

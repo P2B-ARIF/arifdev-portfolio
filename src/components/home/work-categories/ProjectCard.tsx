@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import ColorThief from "color-thief-browser";
 import Image from "next/image";
+import ColorThief from "colorthief";
 
 interface Project {
 	id: number;
@@ -13,58 +13,33 @@ interface Project {
 	keywords?: string[];
 }
 
+// finally work...
 const ProjectCard = ({ project }: { project: Project }) => {
 	const imgRef = useRef<HTMLImageElement>(null);
-	const [bgColor, setBgColor] = useState<string>("#f3f3f3");
+	const [bgColor, setBgColor] = useState<string>("#0b1323");
 
 	useEffect(() => {
 		const img = imgRef.current;
-		const colorThief = ColorThief; // Changed this line
+		if (!img) return;
 
 		const extractColor = () => {
-			if (!img) return;
-
 			try {
+				const colorThief = new ColorThief();
 				const color = colorThief.getColor(img);
 				setBgColor(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.8)`);
 			} catch (error) {
 				console.error("Color extraction failed:", error);
+				setBgColor("#0b1323"); // Fallback color
 			}
 		};
 
-		if (img?.complete) {
+		if (img.complete) {
 			extractColor();
 		} else {
-			img?.addEventListener("load", extractColor);
-			return () => img?.removeEventListener("load", extractColor);
+			img.addEventListener("load", extractColor);
+			return () => img.removeEventListener("load", extractColor);
 		}
-	}, []);
-	// const imgRef = useRef<HTMLImageElement>(null);
-	// const [bgColor, setBgColor] = useState<string>("#f3f3f3");
-
-	// useEffect(() => {
-	// 	const img = imgRef.current;
-
-	// 	const extractColor = () => {
-	// 		if (!img) return;
-	// 		const colorThief = new ColorThief();
-	// 		setTimeout(() => {
-	// 			try {
-	// 				const color = colorThief.getColor(img);
-	// 				setBgColor(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.8)`);
-	// 			} catch (error) {
-	// 				console.error("Color extraction failed:", error);
-	// 			}
-	// 		}, 100);
-	// 	};
-
-	// 	if (img?.complete) {
-	// 		extractColor();
-	// 	} else {
-	// 		img?.addEventListener("load", extractColor);
-	// 		return () => img?.removeEventListener("load", extractColor);
-	// 	}
-	// }, []);
+	}, [project.imageUrl]); // Add dependency
 
 	return (
 		<motion.div
@@ -85,14 +60,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
 				<h3 className='text-sm md:text-base text-shadow-lg'>
 					{project?.description}
 				</h3>
-				{/* <div className='flex items-center text-sm text-gray-400'>
-					<div className='ml-1 w-6 h-6 rounded-full bg-white text-black flex items-center justify-center -rotate-45 shadow-lg'>
-						<ArrowRight size={14} />
-					</div>
-				</div> */}
 			</div>
 
-			{/* Real image used for color extraction */}
 			<div className='w-full h-[280px] md:h-[300px] 2xl:h-[40vh] bg-white rounded-2xl overflow-hidden'>
 				<Image
 					ref={imgRef}
@@ -102,6 +71,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
 					className='w-full h-full object-cover'
 					width={600}
 					height={400}
+					onLoadingComplete={() => {
+						// Alternative color extraction trigger
+						const img = imgRef.current;
+						if (img?.complete) {
+							const colorThief = new ColorThief();
+							try {
+								const color = colorThief.getColor(img);
+								setBgColor(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.8)`);
+							} catch (error) {
+								console.error("Color extraction failed:", error);
+							}
+						}
+					}}
 				/>
 			</div>
 		</motion.div>

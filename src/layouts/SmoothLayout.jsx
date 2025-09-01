@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function SmoothLayout({ children }) {
 	useEffect(() => {
 		const lenis = new Lenis({
-			lerp: 0.05,
+			lerp: 0.07,
 			smooth: true,
 			direction: "vertical",
 		});
@@ -15,11 +15,6 @@ export default function SmoothLayout({ children }) {
 			requestAnimationFrame(update);
 		};
 		requestAnimationFrame(update);
-
-		// optional: lenis event listener (যদি future-এ দরকার হয়)
-		// lenis.on('scroll', (e) => {
-		// 	console.log(e);
-		// });
 
 		return () => {
 			lenis.destroy();

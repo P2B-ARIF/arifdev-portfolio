@@ -116,7 +116,7 @@ const AboutSection = () => {
 						className='bg-gray-800/50 border-gray-700 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-800 text-center border justify-center'
 					>
 						<Telescope size={18} />
-						Explore <span className={"md:block hidden"}>About</span> me
+						Explore <span className={"md:block hidden"}>about</span> me
 					</Link>
 				</div>
 			</motion.div>

@@ -25,28 +25,31 @@ import {
 import { motion } from "framer-motion";
 import { InfiniteMovingImages } from "@/components/common/infinite-moving-images";
 
-import img1 from "@/assets/images/image1.jpg";
-import img2 from "@/assets/images/image2.jpg";
-import img3 from "@/assets/images/image3.jpg";
-import img4 from "@/assets/images/image4.jpg";
-import img5 from "@/assets/images/image5.jpg";
-import img6 from "@/assets/images/image6.jpg";
-
 import wp_profile from "@/assets/images/picture1.jpg";
 import FAQSection from "@/components/home/FAQSection";
+import { imageConfig } from "@/utils/imageConfig";
 
 const Contact = () => {
 	const images = [
-		{ src: img1 },
-		{ src: img2 },
-		{ src: img3 },
-		{ src: img4 },
-		{ src: img5 },
-		{ src: img6 },
-		{ src: img3 },
-		{ src: img4 },
-		{ src: img5 },
-		{ src: img6 },
+		{ src: imageConfig.photo1 },
+		{ src: imageConfig.photo2 },
+		{ src: imageConfig.photo3 },
+		{ src: imageConfig.photo4 },
+		{ src: imageConfig.photo5 },
+		{ src: imageConfig.photo6 },
+		{ src: imageConfig.photo7 },
+		{ src: imageConfig.photo8 },
+		{ src: imageConfig.photo9 },
+		{ src: imageConfig.photo10 },
+		{ src: imageConfig.photo11 },
+		{ src: imageConfig.photo12 },
+		{ src: imageConfig.photo13 },
+		{ src: imageConfig.photo14 },
+		{ src: imageConfig.photo15 },
+		{ src: imageConfig.photo16 },
+		{ src: imageConfig.photo17 },
+		{ src: imageConfig.photo18 },
+		{ src: imageConfig.photo19 },
 	];
 
 	return (

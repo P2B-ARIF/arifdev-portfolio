@@ -68,9 +68,12 @@ const WorkCard = ({ idx, list, range, targetScale, progress }: any) => {
 					</p>
 
 					<div className='pt-1'>
-						{workList?.skills?.map(skill => {
+						{workList?.skills?.map((skill, idx) => {
 							return (
-								<span className='m-1 ml-0 mr-2 text-xs px-2 py-1 rounded-full bg-gray-500 inline-block text-white'>
+								<span
+									key={idx}
+									className='m-1 ml-0 mr-2 text-xs px-2 py-1 rounded-full bg-gray-500 inline-block text-white'
+								>
 									{skill}
 								</span>
 							);
