@@ -12,7 +12,7 @@ interface Project {
 	description?: string;
 	keywords?: string[];
 }
-
+// oaky..
 // finally work...
 const ProjectCard = ({ project }: { project: Project }) => {
 	const imgRef = useRef<HTMLImageElement>(null);
